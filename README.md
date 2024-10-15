@@ -1,14 +1,33 @@
 # Sick without signs. Subclinical infections reduce local movements, alter habitat selection, and cause demographic shifts
 
-https://doi.org/10.5281/zenodo.13934755
+<https://doi.org/10.5281/zenodo.13934755>
 
-Give a brief summary of dataset contents, contextualized in experimental procedures and results.
+![A house martin (Delichon urbicum) tagged with ultra-high resolution ATLAS tag; photo: Marie Klett](images/DSC_7296.JPG)
+
+# Abstract
+
+In wildlife populations, parasites often go unnoticed,
+as infected animals appear asymptomatic. However, these infections can subtly
+alter behaviour. Field evidence of how these subclinical infections induce
+changes in movement behaviour is scarce in free-ranging animals, yet it may be
+crucial for zoonotic disease surveillance. We used an ultra-high-resolution
+tracking system (ATLAS) to monitor the movements of 60 free-ranging swallows
+every 8 seconds across four breeding seasons, resulting in over 1 million
+localizations. About 40% of these swallows were naturally infected with
+haemosporidian parasites. Here, we show that infected individuals had reduced
+foraging ranges, foraged in lower quality habitats, and faced a lowered
+survival probability, with an average reduction of 7.4%, albeit with some
+variation between species and years. This study highlights the impact of
+subclinical infections on movement behaviour and survival, emphasizing the
+importance of considering infection status in movement ecology. Our findings
+provide insights into individual variations in behaviour and previously
+unobservable local parasite transmission dynamics.
 
 ## Description of the data and file structure
 
 **This R-Project contains the following code files (in folder R):**
 
-*01_cmr_data_cleaning:  Code to clean the raw capture-mark-recapture data*
+*01_cmr_data_cleaning: Code to clean the raw capture-mark-recapture data*
 
 *02_pathogen_data_cleaning* *Code to clean the raw pathogen data*
 
@@ -52,6 +71,6 @@ NA
 
 ## Code / Software
 
-Multievent models (08_XXX) and simulations (09_XXX) require package nimble (de Valpine et al., 2017): [https://doi.org/10.1080/10618600.2016.1172487](https://doi.org/10.1080/10618600.2016.1172487)
+Multievent models (08_XXX) and simulations (09_XXX) require package nimble (de Valpine et al., 2017): <https://doi.org/10.1080/10618600.2016.1172487>
 
 Please see R scripts for additional packages used in processing data.
