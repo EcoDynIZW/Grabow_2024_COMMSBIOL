@@ -1,6 +1,6 @@
 # Sick without signs. Subclinical infections reduce local movements, alter habitat selection, and cause demographic shifts
 
-https://doi.org/10.5061/dryad.mpg4f4r7c
+https://doi.org/10.5281/zenodo.13934755
 
 Give a brief summary of dataset contents, contextualized in experimental procedures and results.
 
