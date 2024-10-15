@@ -1,0 +1,665 @@
+---
+title: "BioMove swallow-parasite manuscript (5)" ## name of your project and analysis step
+description: "Hidden-Markov models (HMM) to classify animal behaviour"
+author:
+    - name: "Marius Grabow"
+      email: "grabow@izw-berlin.de" 
+      affiliation: Leibniz Institute for Zoo and Wildlife Research
+      affiliation_url: https://izw-berlin.de/en/
+      orcid_id: 0000-0003-0702-9642
+date: "`r Sys.Date()`"
+output: 
+    distill::distill_article:
+        highlight: kate      ## styling of code
+        code_folding: true  ## if `true` you can expand and shrink code chunks
+        toc: true            ## if `true` adds a table of content
+        toc_depth: 2         ## level to be displayed in the table of content
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+                      dev = "ragg_png", fig.width = 9, fig.height = 6, dpi = 600, retina = 1)
+Sys.setlocale("LC_TIME", "C")
+```
+
+# Setup
+
+```{r packages, message=FALSE, warning=FALSE}
+library("here")
+library("dplyr")
+library("lubridate")
+library("ggplot2")
+library("momentuHMM") 
+library("parallel")
+library("foreach")
+library("sf")
+library("tidyr")
+```
+
+# read data
+```{r}
+swallows<-readRDS(here("output",
+                               "data-proc",
+                               "swallows_final_2024.RDS"))%>%
+  ungroup()%>%
+  distinct()%>%
+  st_as_sf(coords = c("x","y"), crs = 3035,remove = FALSE)%>%
+  mutate(date=as.Date(substr(TIME,1,10)))%>%
+  mutate(long = st_coordinates(st_transform(.,4326))[,1],
+         lat = st_coordinates(st_transform(.,4326))[,2])
+
+# read cmr data
+cmr<-readRDS(here("output",
+                  "data-proc",
+                  "cmr_pathogens.RDS"))%>%
+  dplyr::select(tag_id,blood_infection,species,location
+         )%>%
+  mutate(tag_id=as.factor(tag_id))%>%
+  rename(capture_location=location)
+
+# join data
+swallows<-left_join(swallows,cmr,by="tag_id")%>%
+  mutate(blood_infection=as.factor(blood_infection))%>%
+  mutate(date=as_date(TIME))%>%
+  unite("ID",tag_id,date,remove=F)
+
+```
+# add covariates
+```{r}
+ras <- terra::rast(here("output",
+                        "geo-proc",
+                        "stacked.tif"))
+
+# extract covariates
+covariates<-terra::extract(ras,swallows)%>%
+  st_drop_geometry()%>%
+  select(-ID)%>%
+  as.data.frame()
+
+# bind
+swallows_cov<-bind_cols(swallows,covariates)
+
+# corrrelation
+corr<-swallows_cov%>%
+  dplyr::select(dist_kettlehole,
+                dist_waterbodies,
+                dist_water,
+                dist_kettlehole,
+                dist_human,
+                dist_streets,
+                dist_river,
+                landuse)%>%
+  st_drop_geometry()%>%
+  co
+
+# correlation plot
+corrplot::corrplot(corr, method="number")
+
+
+```
+
+# prepare data
+```{r, eval=FALSE}
+RS <- swallows_cov %>% 
+  dplyr::filter(species == "RS") %>%
+  st_drop_geometry()%>%
+  arrange(ID,t)%>%
+  group_by(ID) %>%
+  # Create a logical vector (TRUE if "real")
+  mutate(is_before_last_real = cummax(location == "real")) %>%
+  # keep only the rows before and including the last "real"
+  dplyr::filter(is_before_last_real==TRUE) %>%
+  #remove the helper column
+  select(-is_before_last_real)%>%
+  ungroup()%>%
+  as.data.frame()
+
+
+#prepare data and calculate step lengths and turning angles 
+
+data_hmm_RS <- prepData(data = RS) %>%
+  dplyr::mutate(across(
+    .cols = c(dist_kettlehole:dist_river),
+    #scale
+    .fns = ~ as.numeric(scale(.x))
+  ))
+
+#prepare data and calculate step lengths and turning angles 
+# MS = HM (German abbreviation, Mehlschwalbe)
+
+MS <- swallows_cov %>% 
+  dplyr::filter(species == "MS") %>%
+  st_drop_geometry()%>%
+  arrange(ID,t)%>%
+  as.data.frame()
+
+
+#prepare data and calculate step lengths and turning angles 
+
+data_hmm_MS <- prepData(data = MS)%>%
+  dplyr::mutate(across(.cols = c(dist_kettlehole:dist_river), .fns = ~ as.numeric(scale(.x))))
+
+
+data_hmm_all<-bind_rows(data_hmm_RS,
+                        data_hmm_MS)%>%
+  droplevels()
+
+#skim data
+skimr::skim(data_hmm_all$step)
+skimr::skim(data_hmm_all$angle)
+```
+
+
+# three state HMM with starting parameter optimizer. 
+Here, we select the best model (selected model run below, indicated by X)
+
+##RS
+
+```{r three-state with initial parameter optimizer}
+
+niter=50
+
+dist <- list(step = "gamma", angle = "vm")
+
+args_list <-
+  replicate(
+    niter,
+    list(
+stepMean0 <- runif(3,
+min = c(5,60, 150),
+max = c(15,80, 250)),
+
+# Step length standard deviation
+stepSD0 <- runif(3,
+min = c(0.1,1, 30),
+max = c(5,50, 100)),
+
+# Turning angle mean
+angleMean0 <- c(3.1, 3.1, 0.01),
+
+# Turning angle concentration
+angleCon0 <- runif(3,
+min = c(0.01,0.01, 2),
+max = c(5,5, 10)),
+
+# Return vectors of starting values
+stepPar0 <- c(stepMean0, stepSD0),
+
+#Gamma distribution equal stepd and sd
+#stepPar0 <- c(stepMean0, stepMean0)
+
+
+
+anglePar0 <- c(angleMean0, angleCon0),
+
+#anglePar0 <- c(angleMean0)
+return(list(step = stepPar0, angle = anglePar0))
+    ),
+    simplify = FALSE
+  )
+
+
+# custom function to run the model
+run_model<-function(parameters){
+  
+  step<-parameters$step
+  angle<-parameters$angle
+  
+  Par0=list(step=step,angle=angle)
+  
+  m_RS <- momentuHMM::fitHMM(
+    data = na.omit(data_hmm_RS),
+    nbStates = 3,
+    stateNames = c("resting", "foraging", "commuting"),
+    Par0 = Par0,
+    dist = dist,
+    estAngleMean = list(angle = TRUE),
+    workBounds=list(step=stepworkBounds,angle=angleworkBounds),
+    userBounds=list(step=stepBounds,angle=angleBounds),
+              formula = ~ dist_kettlehole*blood_infection,
+              formulaDelta = ~  blood_infection
+  )
+
+return(m_RS)}
+
+
+all_models_RS<-purrr::map(args_list,run_model)
+
+
+plot(all_models_RS[[1]])
+
+all <- unlist(lapply(all_models_RS, function(m) m$mod$minimum))
+all
+
+whichbest <- which.min(all)
+# Best fitting model
+mbest <- all_models_RS[[whichbest]]
+mbest
+```
+
+## MS / HM
+
+```{r three-state with initial parameter optimizer}
+
+niter=50
+
+dist <- list(step = "gamma", angle = "vm")
+
+args_list <-
+  replicate(
+    niter,
+    list(
+stepMean0 <- runif(3,
+min = c(5,60, 150),
+max = c(15,80, 250)),
+
+# Step length standard deviation
+stepSD0 <- runif(3,
+min = c(0.1,1, 30),
+max = c(5,50, 100)),
+
+# Turning angle mean
+angleMean0 <- c(3.1, 3.1, 0.01),
+
+# Turning angle concentration
+angleCon0 <- runif(3,
+min = c(0.01,0.01, 2),
+max = c(5,5, 10)),
+
+# Return vectors of starting values
+stepPar0 <- c(stepMean0, stepSD0),
+
+#Gamma distribution equal stepd and sd
+#stepPar0 <- c(stepMean0, stepMean0)
+
+
+
+anglePar0 <- c(angleMean0, angleCon0),
+
+#anglePar0 <- c(angleMean0)
+return(list(step = stepPar0, angle = anglePar0))
+    ),
+    simplify = FALSE
+  )
+
+
+# custom function to run the model
+run_model<-function(parameters){
+  
+  step<-parameters$step
+  angle<-parameters$angle
+  
+  Par0=list(step=step,angle=angle)
+  
+  m_MS <- momentuHMM::fitHMM(
+    data = na.omit(data_hmm_MS),
+    nbStates = 3,
+    stateNames = c("resting", "foraging", "commuting"),
+    Par0 = Par0,
+    dist = dist,
+    estAngleMean = list(angle = TRUE),
+    workBounds=list(step=stepworkBounds,angle=angleworkBounds),
+    userBounds=list(step=stepBounds,angle=angleBounds),
+              formula = ~ dist_kettlehole*blood_infection,
+              formulaDelta = ~  blood_infection
+  )
+
+return(m_MS)}
+
+
+all_models_MS<-purrr::map(args_list,run_model)
+
+
+plot(all_models_MS[[1]])
+
+all <- unlist(lapply(all_models_MS, function(m) m$mod$minimum))
+all
+
+whichbest <- which.min(all)
+# Best fitting model
+mbest <- all_models_MS[[whichbest]]
+mbest
+```
+
+# Selected models (indicated with X)
+## Define working bounds in models
+
+```{r}
+#Nr states
+nbStates<-3
+# state names
+stateNames = c("resting","foraging","commuting")
+# distributions
+stepDist<-"gamma"
+angleDist<-"vm"
+
+
+# Design matrix for step length
+stepDM<-matrix(c(1,0,0,0,0,0,
+                 0,1,0,0,0,0,
+                 0,0,1,0,0,0,
+                 0,0,0,1,0,0,
+                 0,0,0,0,1,0,
+                 0,0,0,0,0,1),2*nbStates,6,byrow=TRUE,
+               dimnames=list(c(paste0("mean_",1:nbStates),paste0("sd_",1:nbStates)),
+                             c("mean_1:(Intercept)","mean_2:(Intercept)","mean_3:(Intercept)",
+                               paste0("sd_",1:nbStates,":(Intercept)"))))
+
+# working bounds for step length
+
+stepworkBounds <- matrix(c(rep(-Inf,6),
+                           rep(Inf,6)),
+                         6,#rows
+                         2) #cols
+
+# define limits
+stepBounds<-matrix(c(0,15,
+                     40,Inf,
+                     100,Inf,
+                     0,15,
+                     0,Inf,
+                     0,Inf),nrow=2*nbStates,byrow=TRUE,dimnames=list(rownames(stepDM),c("lower","upper")))
+
+# Design matrix for turning angles
+
+angleDM<-matrix(c(1,0,0,0,0,0,
+                  0,1,0,0,0,0,
+                  0,0,1,0,0,0,
+                  0,0,0,1,0,0,
+                  0,0,0,0,1,0,
+                  0,0,0,0,0,1),2*nbStates,6,byrow=TRUE,
+               dimnames=list(c(paste0("mean_",1:nbStates),paste0("con_",1:nbStates)),
+                             c(paste0("mean",1:nbStates,":(Intercept)"),
+                               paste0("con_",1:nbStates,":(Intercept)"))))
+
+#working bounds for turning angles
+
+angleworkBounds <-  matrix(c(rep(-Inf,6),rep(Inf,6)),6,2)
+
+# define limits (here: no limits, 0-pi)
+
+angleBounds<-matrix(c(0,pi,
+                      0,pi,
+                      0,pi,
+                      0.01,5,
+                      1,5,
+                      4,10),nrow=2*nbStates,byrow=TRUE)
+
+# step, angle parameters
+
+stepPar0 <- c(15,40,150,
+              10,40,100
+              #0.95,0.025,0.025
+              )
+
+anglePar0 <-c(3.1,3.1,0.01,0.5,3,6)
+
+
+# Par0_all<-getParDM(data=data_hmm_MS,
+#                nbStates=nbStates,
+#                dist=list(step=stepDist,angle=angleDist),
+#                Par=list(step=stepPar0,angle=anglePar0),
+#                #workBounds=list(step=stepworkBounds,angle=angleworkBounds),
+#                #userBounds = list(step=stepBounds,angle=angleBounds),
+#                #DM=list(step=stepDM,angle=angleDM),
+#                estAngleMean = list(angle=TRUE))
+
+l<-list(step=stepPar0,
+     angle=anglePar0)
+
+```
+
+## RS_X
+
+```{r}
+stepPar0 <- c(10,80,200,
+              5,40,50
+              #0.95,0.025,0.025
+              )
+
+stepBounds<-matrix(c(0,20,
+                     40,Inf,
+                     150,Inf,
+                     0,20,
+                     0,Inf,
+                     0,Inf),nrow=2*nbStates,byrow=TRUE)
+
+anglePar0 <-c(3.1,3.1,0.01,1,1,3)
+
+angleBounds<-matrix(c(0,pi,
+                      0,pi,
+                      0,1,
+                      0.01,5,
+                      0.01,5,
+                      2,10),nrow=2*nbStates,byrow=TRUE)
+
+Par0_M1<-list(step=stepPar0,
+         angle=anglePar0)
+
+
+RS_2024_X<-fitHMM(na.omit(data_hmm_RS),
+                nbStates=nbStates,
+                dist=list(step=stepDist,angle=angleDist),
+                Par0=Par0_M1,
+                #DM=list(step=stepDM,angle=angleDM),
+                workBounds=list(step=stepworkBounds,angle=angleworkBounds),
+                userBounds=list(step=stepBounds,angle=angleBounds),
+                stateNames=stateNames,
+                estAngleMean = list(angle=TRUE),
+              formula = ~ dist_kettlehole*blood_infection,
+              formulaDelta = ~  blood_infection)
+
+
+
+
+saveRDS(RS_2024_X,here("output",
+                    "data-proc",
+                    "RS_2024_X.RDS"))
+# plot stationary
+plotStationary(RS_2024_X,plotCI = TRUE)
+
+momentuHMM::plotStationary(RS_2024_X,plotCI = TRUE,return=TRUE)->RS_Stationary
+
+plot(RS_2024_X,plotTracks = T,ask=F)
+
+# run viterbi algorithm
+viterbi_RS_1<-momentuHMM::viterbi(RS_2024_X)
+
+data_RS_1<-RS_2024_X[["data"]]
+
+
+
+RS_states<-data_RS_1%>%
+  select(ID,x,y,tag_id,t,TIME,location,blood_infection,species,capture_location)%>%
+  mutate(state=viterbi_RS_1)
+
+saveRDS(RS_states,here("output",
+                   "data-proc",
+                   "RS_states_X.RDS"))
+
+
+# Define the estimates, standard errors, and sample sizes
+est_n_foraging <- 0.3984656
+se_n_foraging <- 0.005971204
+n_n_foraging <- 71
+
+est_y_foraging <- 0.2466350
+se_y_foraging <- 0.026005414
+n_y_foraging <- 3
+
+# Calculate the Welch's t-test statistic
+t_score_foraging <- (est_n_foraging - est_y_foraging) / sqrt((se_n_foraging^2 / n_n_foraging) + (se_y_foraging^2 / n_y_foraging))
+
+# Calculate the degrees of freedom using the Welch-Satterthwaite equation
+df_foraging <- ((se_n_foraging^2 / n_n_foraging) + (se_y_foraging^2 / n_y_foraging))^2 / 
+               ((se_n_foraging^2 / n_n_foraging)^2 / (n_n_foraging - 1) + (se_y_foraging^2 / n_y_foraging)^2 / (n_y_foraging - 1))
+
+# Calculate the p-value
+p_value_foraging <- 2 * pt(-abs(t_score_foraging), df_foraging)
+
+# Output the results
+data.frame(est_n_foraging, est_y_foraging, t_score_foraging, p_value_foraging, df_foraging)
+
+### resting
+# Define the estimates, standard errors, and sample sizes
+est_n_resting <- 0.5669215
+se_n_resting <- 0.006259024
+n_n_resting <- 71
+
+est_y_resting <- 0.7407816
+se_y_resting <- 0.026276756
+n_y_resting <- 3
+
+# Calculate the Welch's t-test statistic
+t_score_resting <- (est_n_resting - est_y_resting) / sqrt((se_n_resting^2 / n_n_resting) + (se_y_resting^2 / n_y_resting))
+
+# Calculate the degrees of freedom using the Welch-Satterthwaite equation
+df_resting <- ((se_n_resting^2 / n_n_resting) + (se_y_resting^2 / n_y_resting))^2 / 
+               ((se_n_resting^2 / n_n_resting)^2 / (n_n_resting - 1) + (se_y_resting^2 / n_y_resting)^2 / (n_y_resting - 1))
+
+# Calculate the p-value
+p_value_resting <- 2 * pt(-abs(t_score_resting), df_resting)
+
+# Output the results
+data.frame(est_n_resting, est_y_resting, t_score_resting, p_value_resting, df_resting)
+
+```
+
+
+## MS/HM_X
+```{r}
+stepPar0 <- c(10,80,200,
+              5,40,50
+              #0.95,0.025,0.025
+              )
+
+stepBounds<-matrix(c(0,20,
+                     40,Inf,
+                     150,Inf,
+                     0,20,
+                     0,Inf,
+                     0,Inf),nrow=2*nbStates,byrow=TRUE)
+
+anglePar0 <-c(3.1,3.1,0.01,1,1,3)
+
+angleBounds<-matrix(c(0,pi,
+                      0,pi,
+                      0,1,
+                      0.01,5,
+                      0.01,5,
+                      2,10),nrow=2*nbStates,byrow=TRUE)
+
+Par0_M3<-list(step=stepPar0,
+         angle=anglePar0)
+
+
+MS_2024_X<-fitHMM(na.omit(data_hmm_MS),
+                nbStates=nbStates,
+                dist=list(step=stepDist,angle=angleDist),
+                Par0=Par0_M3,
+                #DM=list(step=stepDM,angle=angleDM),
+                workBounds=list(step=stepworkBounds,angle=angleworkBounds),
+                userBounds=list(step=stepBounds,angle=angleBounds),
+                stateNames=stateNames,
+                estAngleMean = list(angle=TRUE),
+              formula = ~ dist_kettlehole*blood_infection,
+              formulaDelta = ~  blood_infection)
+
+
+
+saveRDS(MS_2024_X,here("output",
+                    "data-proc",
+                    "MS_2024_X.RDS"))
+
+plotStationary(MS_2024_X,plotCI = TRUE)
+momentuHMM::plotStationary(MS_2024_X,plotCI = TRUE,return=TRUE)->MS_Stationary
+
+
+
+plot(MS_2024_X,plotTracks = T,ask=F)
+
+
+viterbi_MS_X<-viterbi(MS_2024_X)
+
+data_MS_X<-MS_2024_X[["data"]]
+
+MS_states<-data_MS_X%>%
+  select(ID,x,y,tag_id,t,TIME,location,blood_infection,species,capture_location)%>%
+  mutate(state=viterbi_MS_X)
+
+saveRDS(MS_states,here("output",
+                   "data-proc",
+                   "MS_states_X.RDS"))
+
+
+# Define the estimates, standard errors, and sample sizes
+est_n_foraging <- 0.6385315
+se_n_foraging <- 0.007651575 
+n_n_foraging <- 84
+
+est_y_foraging <- 0.5627271 
+se_y_foraging <- 0.008043914
+n_y_foraging <- 58
+
+# Calculate the Welch's t-test statistic
+t_score_foraging <- (est_n_foraging - est_y_foraging) / sqrt((se_n_foraging^2 / n_n_foraging) + (se_y_foraging^2 / n_y_foraging))
+
+# Calculate the degrees of freedom using the Welch-Satterthwaite equation
+df_foraging <- ((se_n_foraging^2 / n_n_foraging) + (se_y_foraging^2 / n_y_foraging))^2 / 
+               ((se_n_foraging^2 / n_n_foraging)^2 / (n_n_foraging - 1) + (se_y_foraging^2 / n_y_foraging)^2 / (n_y_foraging - 1))
+
+# Calculate the p-value
+p_value_foraging <- 2 * pt(-abs(t_score_foraging), df_foraging)
+
+# Output the results
+data.frame(est_n_foraging, est_y_foraging, t_score_foraging, p_value_foraging, df_foraging)
+
+#resting
+
+# Define the estimates, standard errors, and sample sizes
+est_n_resting <- 0.3222454 
+se_n_resting <- 0.008000704  
+n_n_resting <- 84
+
+est_y_resting <- 0.4191156  
+se_y_resting <- 0.008177290 
+n_y_resting <- 58
+
+# Calculate the Welch's t-test statistic
+t_score_resting <- (est_n_resting - est_y_resting) / sqrt((se_n_resting^2 / n_n_resting) + (se_y_resting^2 / n_y_resting))
+
+# Calculate the degrees of freedom using the Welch-Satterthwaite equation
+df_resting <- ((se_n_resting^2 / n_n_resting) + (se_y_resting^2 / n_y_resting))^2 / 
+               ((se_n_resting^2 / n_n_resting)^2 / (n_n_resting - 1) + (se_y_resting^2 / n_y_resting)^2 / (n_y_resting - 1))
+
+# Calculate the p-value
+p_value_resting <- 2 * pt(-abs(t_score_resting), df_resting)
+
+# Output the results
+data.frame(est_n_resting, est_y_resting, t_score_resting, p_value_resting, df_resting)
+
+```
+
+
+
+------------------------------------------------------------------------
+
+<details>
+
+<summary>Session Info</summary>
+
+```{r sessionInfo}
+## DO NOT REMOVE!
+## We store the settings of your computer and the current veMSions of the
+## packages used to allow for reproducibility
+Sys.time()
+#git2r::repository() ## uncomment if you are using GitHub
+sessionInfo()
+```
+
+
+
+
+

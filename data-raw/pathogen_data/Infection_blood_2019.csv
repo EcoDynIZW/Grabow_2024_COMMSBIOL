@@ -1,0 +1,25 @@
+date,ring_id,tag_id,sample_id,species,sex,test,comments,plasmodium,haemoproteus,leucocytozoon
+23/08/2019,ZI13726,2175,1,RS,m,in allen Proben  ca. 30-40µl Blut ,siehe ausführliche Tabelle,n,n,n
+23/05/2019,ZI13723,2255,2,RS,m,in allen Proben  ca. 30-40µl Blut ,siehe ausführliche Tabelle,n,n,n
+20/05/2019,ZI13711,2253,3,RS,m,in allen Proben  ca. 30-40µl Blut ,siehe ausführliche Tabelle,n,n,n
+25/08/2019,ZI13745,2179,4,RS,m,in allen Proben  ca. 30-40µl Blut ,siehe ausführliche Tabelle,y,n,n
+21/05/2019,ZI13717,2258,5,RS,m,in allen Proben  ca. 30-40µl Blut ,siehe ausführliche Tabelle,n,n,n
+24/05/2019,VH59009,2125,6,MS,m,in allen Proben  ca. 30-40µl Blut ,keine guten Ratios in NanoDrop -- Verunreinigungen??,n,n,n
+24/05/2019,VH59006,2259,7,MS,m,in allen Proben  ca. 30-40µl Blut ,siehe ausführliche Tabelle,double,n,n
+20/05/2019,ZI13708,2249,8,RS,m,in allen Proben  ca. 30-40µl Blut ,siehe ausführliche Tabelle,n,n,n
+24/05/2019,VH59007,2262,9,MS,m,in allen Proben  ca. 30-40µl Blut ,keine guten Ratios in NanoDrop -- Verunreinigungen??,n,n,n
+20/05/2019,ZI13712,2243,10,RS,m,30-40µl Blut,"ACHTUNG: Bei letztem Extraktionsschritt (Eluierung) falschen Buffer (AVL statt AVE) benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+25/08/2019,ZI13732,2219,11,RS,m,30-40µl Blut,"ACHTUNG: Bei letztem Extraktionsschritt falschen Buffer benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+20/05/2019,ZI13716,2243b,12,RS,m,30-40µl Blut,"ACHTUNG: Bei letztem Extraktionsschritt falschen Buffer benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+20/05/2019,ZI13710,2251,13,RS,m,30-40µl Blut,"ACHTUNG: Bei letztem Extraktionsschritt falschen Buffer benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+25/08/2019,ZI13733,2227,14,RS,f,30-40µl Blut,"ACHTUNG: Bei letztem Extraktionsschritt falschen Buffer benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+23/08/2019,ZI13725,2221,15,RS,m,30-40µl Blut,"ACHTUNG: Bei letztem Extraktionsschritt falschen Buffer benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+25/08/2019,ZI13743,2181,16,RS,f,30-40µl Blut,"ACHTUNG: Bei letztem Extraktionsschritt falschen Buffer benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+23/08/2019,PC35846,NA,17,HS,f,sehr wenig Blut in Probe (10-15µl),"ACHTUNG: Bei letztem Extraktionsschritt falschen Buffer benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+22/08/2019,ZI13719,2264,18,RS,f,30-40µl Blut,"ACHTUNG: Bei letztem Extraktionsschritt falschen Buffer benutzt!!! NanoDrop sehr schlechte Werte, Proben wahrscheinlich futsch!!",n,n,n
+25/08/2019,ZI13747,2178,1,RS,m,~10-20µl Blut,bisher kein NanoDrop,n,n,n
+20/05/2019,ZI13709,2254,2,RS,m,40µl Blut,bisher kein NanoDrop,n,n,n
+25/08/2019,ZI13741,2180,3,RS,m,40,bisher kein NanoDrop,n,n,n
+20/05/2019,ZI13706,2248,4,RS,m,40,bisher kein NanoDrop,n,n,n
+21/05/2019,ZI13718,2169,5,RS,m,30,bisher kein NanoDrop,n,n,n
+23/05/2019,ZI13721,2153,2,RS,f,40,,n,n,n

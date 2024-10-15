@@ -1,0 +1,815 @@
+---
+title: "BioMove swallow-parasite manuscript (4)" ## name of your project and analysis step
+description: "continuous-time-movement models (ctmm)"
+author:
+    - name: "Marius Grabow"
+      email: "grabow@izw-berlin.de" 
+      affiliation: Leibniz Institute for Zoo and Wildlife Research
+      affiliation_url: https://izw-berlin.de/en/
+      orcid_id: 0000-0003-0702-9642
+date: "`r Sys.Date()`"
+output: 
+    distill::distill_article:
+        highlight: kate      ## styling of code
+        code_folding: true  ## if `true` you can expand and shrink code chunks
+        toc: true            ## if `true` adds a table of content
+        toc_depth: 2         ## level to be displayed in the table of content
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+                      dev = "ragg_png", fig.width = 9, fig.height = 6, dpi = 600, retina = 1)
+Sys.setlocale("LC_TIME", "C")
+```
+
+# Setup
+Load required packages
+
+```{r packages, message=FALSE}
+library("here")
+library("tidyverse")
+library("ctmm")
+library("sf")
+library("foreach")
+```
+
+# Background:
+
+Here, we fit time continuous movement models to ATLAS movement data of barn swallows and house martins. We fit separate models, (A) first for each individual that was tagged, (B) second, we fit models for each individual and day to later account for the variation between days.
+
+# CTMM workflow
+## 1 Prepare data
+
+
+- drop animals without known infection status (i.e. animals that were not tested)
+- rename columns to movebank conventions
+- transform to telemetry object
+- select important covariates to keep
+
+```{r}
+# create prep function
+prep<-function(df,TIME){
+  
+  
+  df%>%
+  sf::st_drop_geometry() %>%
+  # filter out all animals that have not been blood-sampled
+  filter(!is.na(blood_infection)) %>%
+  #rename
+  mutate(
+    sensor = "atlas",
+    tag_id = as.character(tag_id),
+    TAG = tag_id) %>%
+  #doesn't like tibbles
+  as.data.frame() %>%
+  #rename
+  rename(
+    individual.local.identifier = tag_id,
+    timestamp = TIME,
+    location.long = long,
+    location.lat = lat,
+    COV.x.y = COVXY,
+    VAR.x = VARX,
+    VAR.y = VARY
+  ) %>%
+  #telemetry object
+  as.telemetry(
+    projection = "+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs",
+    keep = c(
+      "TAG",
+      "species",
+      "sex",
+      "COV.x.y",
+      "VAR.x",
+      "VAR.y",
+      "blood_infection",
+      "sum_infection",
+      "infection_type",
+      "plasmodium",
+      "leucocytozoon",
+      "haemoproteus"
+    )
+  )%>%
+    keep( ~ nrow(.x) > 500)
+}
+
+# Function to realign timestamps
+realign_timestamps <- function(df, interval) {
+  df %>%
+    mutate(start_time = first(TIME), # Dynamically determine the start time for each group
+           interval_count = round((TIME - start_time) / interval),
+           adjusted_timestamp = start_time + interval_count * interval)
+}
+```
+
+```{r}
+##apply function
+swallows_tag <- readRDS(here("output",
+                             "data-proc",
+                             "swallows_day_all.RDS")) %>%
+  dplyr::filter(!is.na(blood_infection)) %>%
+  group_by(tag_id) %>%
+  realign_timestamps(interval = 8) %>%
+  mutate(TIME = adjusted_timestamp) %>%
+  as.data.frame() %>%
+  distinct(TIME, .keep_all = TRUE) %>%
+  ungroup() %>%
+  prep(TIME)
+
+
+names(swallows_tag) -> keep
+
+uere(swallows_tag) <- 1
+
+### save true locations
+true_locations <- swallows_tag %>%
+  map_df( ~ enframe(.x$t, name = NULL, value = "t"), .id = "tag_id") %>%
+  mutate(location = "real")
+
+true <- split(true_locations$t, true_locations$tag_id)
+
+```
+
+
+## 2 Fit CTMM for each individual
+
+Parallelize (Don't run this code on a local machine)
+
+
+```{r tag ctmm fit, eval=FALSE, include=TRUE}
+
+# set-up parallel sessions
+cl <- parallel::makeCluster(20)
+doParallel::registerDoParallel(cl)
+
+# create function to fit data & select best movement model
+model_fit <- function(i)
+{
+  GUESS <-
+    ctmm.guess(swallows_tag[[i]],
+               CTMM = ctmm(error = TRUE),
+               interactive = FALSE)
+  ctmm.select(swallows_tag[[i]], GUESS)
+}
+
+#iterate over list
+ctmm_fit_tag_id <-
+  foreach(
+    i = 1:length(swallows_tag),
+    .packages = 'ctmm',
+    .errorhandling = 'remove'
+  ) %dopar% {
+    model_fit(i)
+  }
+
+#same names
+names(ctmm_fit_tag_id) <- names(swallows_tag)
+
+## 4 Plot Variograms
+
+```{r tag variograms, cache=TRUE}
+level <- c(0.5, 0.95)
+# PLot all variogramms
+
+for (i in 1:length(swallows_tag)) {
+  VARIOGRAM <- variogram(swallows_tag[[i]])
+  
+  PLOT <-
+    plot(
+      VARIOGRAM,
+      CTMM = ctmm_fit_tag[[i]],
+      fraction = 0.7,
+      level = level,
+      col.CTMM = "blue"
+    )
+  
+  
+  print(PLOT)
+  
+  title(
+    main = paste(
+      names(swallows_tag[i]),
+      "species = ",
+      swallows_tag[[i]]$species[1],
+      "sex = ",
+      swallows_tag[[i]]$sex[1],
+      "blood infection = ",
+      swallows_tag[[i]]$blood_infection[1]
+    )
+  )
+}
+```
+
+## 5 Calculate AKDEs by TAG
+
+```{r calculate tag akde, include=TRUE, eval=FALSE}
+
+# set-up parallel session
+cl <- parallel::makeCluster(50)
+doParallel::registerDoParallel(cl)
+
+# function for calculating akde for each individual (using the ctmm model)
+akde_fit_weights <- function(i)
+{
+  AKDE <- akde(swallows_tag[[i]],
+               ctmm_fit_tag[[i]],
+               weights = F)
+}
+
+#iterate over list
+AKDES_tag_weights <- foreach(i=1: length(swallows_tag),.packages='ctmm',.errorhandling = 'remove') %dopar% { akde_fit_weights(i) }
+
+names(AKDES_tag_weights)<-names(swallows_tag)
+
+same_grid_akde<-akde(swallows_tag,ctmm_fit_tag_id)
+
+```
+
+## 6 Calculate akde sizes as data.frame
+
+```{r}
+
+AKDE_size<-NULL
+
+for(i in 1:length(akdes_tag_2024)){
+  TAG <- names(akdes_tag_2024[i])
+  min_AREA <- summary(akdes_tag_2024[[i]],units=F)$CI[1]
+  mean_AREA <- summary(akdes_tag_2024[[i]],units=F)$CI[2]
+  max_AREA <- summary(akdes_tag_2024[[i]],units=F)$CI[3]
+  blood_infection <- swallows_tag[[i]]$blood_infection[1]
+  species <- swallows_tag[[i]]$species[1]
+  
+  AKDE_size = rbind(AKDE_size, data.frame(TAG,min_AREA,mean_AREA,max_AREA,blood_infection,species))
+  
+}
+
+```
+
+
+## 7.1 Meta Analysis Barn swallow & infection
+
+Here, we perform a meta analysis based on chi-square statistics (see Fleming et al. 2022)
+
+```{r Barn swallow & infection, cache=TRUE}
+
+healthy_barn <-  AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "RS" & blood_infection == "n")%>%
+  pull(index)
+
+infected_barn <-  AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "RS" & blood_infection == "y")%>%
+  pull(index)
+
+# meta analysis
+# akde 95%
+(meta(list(BS_NEG=
+            akdes_tag_2024[healthy_barn],
+          BS_POS=
+            akdes_tag_2024[infected_barn]),
+      units=TRUE,
+     plot = TRUE,
+     verbose = TRUE,
+     level.UD = 0.95,
+     level = 0.95,debias = F,
+     main="homerange 95% AKDE isopleth")->RS_meta_export_tag)
+
+# akde 50%
+meta(list(BS_NEG=
+            akdes_tag_2024[healthy_barn],
+          BS_POS=
+            akdes_tag_2024[infected_barn]),
+      units=TRUE,
+     plot = TRUE,
+     verbose = TRUE,
+     level.UD = 0.50,
+     level = 0.95,debias = F,
+     main="homerange 50% AKDE isopleth")
+
+healthy_barn <-  AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "RS" & blood_infection == "n")%>%
+  pull(mean_AREA)
+
+infected_barn <-  AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "RS" & blood_infection == "y")%>%
+  pull(mean_AREA)
+
+
+# confidence levels
+
+M1<-mean(healthy_barn)
+M2 <-mean(infected_barn)
+
+
+ratio<-M1/M2
+
+S1<-sd(index_RS)
+S2<-sd(index_MS)
+
+N1<-length(index_RS)
+N2<-length(index_MS)
+
+# Calculate the Standard Error of the Log Ratio
+SE_log_ratio <- sqrt((S1^2 / (N1 * M1^2)) + (S2^2 / (N2 * M2^2)))
+
+# Output the Standard Error
+lower_bound <- exp(log(ratio) - 1.96 * SE_log_ratio)
+upper_bound <- exp(log(ratio) + 1.96 * SE_log_ratio)
+
+# Output the confidence interval
+c(lower_bound, upper_bound)
+
+```
+
+## 7.2 Meta Analysis House martin & infection
+
+Here, we perform a meta analysis based on chi-square statistics (see Fleming et al. 2022)
+
+
+```{r House martin & infection, cache=TRUE}
+healthy_house <- AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "MS" & blood_infection == "n")%>%
+  pull(index)
+
+infected_house <- AKDE_size %>%
+  mutate(index = row_number()) %>%
+  filter(species == "MS" & blood_infection == "y") %>%
+  pull(index)
+
+# meta analysis
+(meta(list(HM_NEG=
+            akdes_tag_2024[healthy_house],
+          HM_POS=
+            akdes_tag_2024[infected_house]),
+     plot = TRUE,
+     verbose = TRUE,
+     level.UD = 0.95,
+     level = 0.95,debias = F,
+     main="homerange 95% AKDE isopleth")->HM_meta_export_tag)
+
+# akde 50%
+meta(list(HM_NEG=
+            akdes_tag_2024[healthy_house],
+          HM_POS=
+            akdes_tag_2024[infected_house]),
+     plot = TRUE,
+     verbose = TRUE,
+     level.UD = 0.5,
+     level = 0.95,debias = F,
+     main="homerange 50% AKDE isopleth")
+
+
+healthy_house <-  AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "MS" & blood_infection == "n")%>%
+  pull(mean_AREA)
+
+infected_house <-  AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "MS" & blood_infection == "y")%>%
+  pull(mean_AREA)
+
+
+# confidence levels
+
+M1<-mean(healthy_house)
+M2 <-mean(infected_house)
+
+S1<-sd(healthy_house)
+S2<-sd(infected_house)
+
+N1<-length(healthy_house)
+N2<-length(infected_house)
+
+ratio<-M1/M2
+
+
+# Calculate the Standard Error of the Log Ratio
+SE_log_ratio <- sqrt((S1^2 / (N1 * M1^2)) + (S2^2 / (N2 * M2^2)))
+
+# Output the Standard Error
+lower_bound <- exp(log(ratio) - 1.96 * SE_log_ratio)
+upper_bound <- exp(log(ratio) + 1.96 * SE_log_ratio)
+
+# Output the confidence interval
+c(lower_bound, upper_bound)
+
+
+```
+
+# 7.3 Meta Analysis (all individuals) infected vs non-infected
+
+```{r}
+index_healthy <- AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(blood_infection == "n")%>%
+  pull(index)
+
+index_infected <- AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(blood_infection == "y")%>%
+  pull(index)
+
+
+healthy<-akdes_tag_2024%>%
+  keep(seq_along(.) %in% index_healthy)
+
+infected<-akdes_tag_2024%>%
+  keep(seq_along(.) %in% index_infected)
+
+
+(meta(list(non_infected=
+            akdes_tag_2024[index_healthy],
+          infected=
+            akdes_tag_2024[index_infected]),
+     plot = TRUE,
+     IC="AICc",
+     verbose = TRUE,
+     level.UD = 0.95,
+     level = 0.95,debias = TRUE,
+     main="homerange 95% AKDE isopleth")->HM_meta_export_tag)
+```
+
+# Meta analysis swallow species
+
+```{r}
+index_RS <- AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "RS")%>%
+  pull(index)
+
+index_MS<- AKDE_size %>%
+    mutate(index = row_number())%>%
+  filter(species == "MS")%>%
+  pull(index)
+
+
+RS<-akdes_tag_2024%>%
+  keep(seq_along(.) %in% index_RS)
+
+MS<-akdes_tag_2024%>%
+  keep(seq_along(.) %in% index_MS)
+
+
+
+meta(list(RS=
+            akdes_tag_2024[index_RS],
+          MS=
+            akdes_tag_2024[index_MS]),
+     plot = TRUE,
+     IC="AICc",
+     verbose = TRUE,
+     level.UD = 0.95,
+     level = 0.95,debias = F,
+     main="homerange 95% AKDE isopleth")
+
+meta(list(RS=
+            akdes_tag_2024[index_RS],
+          MS=
+            akdes_tag_2024[index_MS]),
+     plot = F,
+     IC="AICc",
+     verbose = TRUE,
+     level.UD = 0.5,
+     level = 0.95,debias = TRUE,
+     main="homerange 50% AKDE isopleth")
+
+index_RS <- AKDE_size %>%
+  rowwise() %>%
+  filter(species == "RS") %>%
+  mutate(index = row_number()) %>%
+  pull(mean_AREA)
+
+index_MS<- AKDE_size %>%
+  rowwise() %>%
+  filter(species == "MS") %>%
+  mutate(index = row_number()) %>%
+  pull(mean_AREA)
+
+
+# confidence levels
+
+M1<-mean(index_RS)
+M2 <-mean(index_MS)
+
+ratio<-M1/M2
+
+S1<-sd(index_RS)
+S2<-sd(index_MS)
+
+N1<-length(index_RS)
+N2<-length(index_MS)
+
+# Calculate the Standard Error of the Log Ratio
+SE_log_ratio <- sqrt((S1^2 / (N1 * M1^2)) + (S2^2 / (N2 * M2^2)))
+exp(SE_log_ratio)
+
+
+# Output the Standard Error
+exp(log(ratio)-1.96*SE_log_ratio)
+exp(log(ratio)+1.96*SE_log_ratio)
+
+
+```
+
+#Funnel plot to test if akde size is independent of 
+```{r}
+funnel(akdes_tag_2024,swallows_tag)
+```
+
+## 7 Simulation based on continuous time movement model and coordination manipulation algorithm. Short description:
+ATLAS data is prone to data inconsistency, i.e. missing data occurs relatively often, and when it does, this is often related to the environment but not the tracking system itself (a common problem in line-of-sight tracking technologies). Here, we try to incorporate both, simulated movement data when animals are moving (characterized by shorter temporal gaps) and utilize the ctmm simulations for these small data gaps. In case of longer data gaps, we can be almost certain that the animal is not moving, or moving very little as not a single detection is coming through. In the latter cases, using a ctmm would estimate movement behaviour when in relality, there is not any movement at all. In the swallows, this is usually the case at their nesting colony, when individuals are resting / nesting at the colony, or sit on branches of trees to rest.
+
+1.) we first save all true locations
+2.) we simulate using the ctmm model through the data.
+
+```{r}
+# save true location
+true_locations<-swallows_tag%>% 
+  map_df(~ enframe(.x$t, name = NULL, value = "t"), .id = "tag_id")%>%
+  mutate(location="real")
+
+true<-split(true_locations$t,true_locations$tag_id)
+
+
+# create some empty list
+simulation_list<-list()
+# simulation function
+simulate_function <- function(i){
+  
+    # define sequence we need for prediction, fist observation of the day - last observation
+  
+    SEQ <- seq(from=true[[i]][1],
+             to=true[[i]][length(true[[i]])],
+             by=8)
+  
+   # predict missing locations using the ctmm model we fitted above (per individual, per day) 
+  SIM <- simulate(swallows_tag[[i]],
+                  ctmm_fit_tag[[i]],
+                  t=SEQ)
+  
+  return(SIM)
+  
+}
+### Parallelize 
+
+cl <- parallel::makeCluster(30)
+doParallel::registerDoParallel(cl)
+
+simulation_list<- foreach(i=1: length(swallows_tag),.packages='ctmm',.errorhandling = 'remove') %dopar% { simulate_function(i) }
+
+
+
+names(simulation_list)<-names(swallows_tag)
+
+
+datalist<-list()
+
+# data frame
+for (i in 1:length(simulation_list)){
+  
+  t <-simulation_list[[i]]$t
+  x <-simulation_list[[i]]$x
+  y <-simulation_list[[i]]$y
+  
+  tag_id<-names(simulation_list[i])
+  
+  dataframe <- data.frame(tag_id,t,x,y)
+  
+  datalist[[i]] <- dataframe
+
+}
+
+simulation<- do.call(rbind, datalist)%>%
+  left_join(true_locations,by=c("tag_id","t"))
+
+
+```
+
+3.) Biological filtering: we - again - remove all observations during night and omit the first 6 hours of tagging (capture induced biases)
+
+```{r}
+# spatial
+swallows_ctmm_sim <- simulation%>%
+  mutate(TIME=as.POSIXct(t,origin = "1970-01-01",tz="UTC"))%>%
+  relocate(tag_id)%>%
+  st_as_sf(coords = c("x","y"), crs = 3035,remove = FALSE)%>%
+  mutate(long = st_coordinates(st_transform(.,4326))[,1],
+         lat = st_coordinates(st_transform(.,4326))[,2])
+
+
+sunlight_time<-suncalc::getSunlightTimes(
+  date=lubridate::date(swallows_ctmm_sim$TIME),
+                          lat=mean(swallows_ctmm_sim$lat),
+                          lon=mean(swallows_ctmm_sim$long),
+                        keep=c("dawn","dusk"),tz="GMT")%>%
+  mutate(dawn=ymd_hms(dawn))%>%
+  mutate(dusk=ymd_hms(dusk))%>%
+  mutate(interval=interval(dawn,dusk))
+
+swallows_tag_day<-
+  swallows_ctmm_sim%>%
+  tibble::add_column(sunlight_time$interval)%>%
+  #keep just daylight observations
+  filter(TIME %within% sunlight_time$interval)%>%
+  # drop geometry columns
+  st_drop_geometry()%>%
+  dplyr::select(-c("sunlight_time$interval"))
+
+
+s<-swallows_tag_day%>%
+  group_by(tag_id)%>%
+    mutate(tagtime_sum=max(TIME)-min(TIME),
+         tagtime=as.numeric(TIME-min(TIME)))%>%
+  ungroup()%>%
+  filter(tagtime>(6*60*60))%>%
+  ungroup()%>%
+  mutate(location = replace_na(location, "filled"))
+
+```
+4.) we create the coordination manipulation function for larger data gaps
+5.) applying the function to the data set (see code below) whenever there are subsequent 25 observations missing (i.e. 25*8 seconds = 224 secs = 3.73 min)
+```{r}
+coord_manipulation_function<-function(a,m){
+  
+  new_coord<- runif(min=(a-m/2),max=(a+m/2), n=1)
+
+  return(new_coord)
+}
+
+
+df <- s %>%
+  # Group by tag_id to perform operations within each unique tag_id
+  group_by(tag_id) %>%
+  # Add a column 'row_num' that indicates the row number within each tag_id group
+  mutate(row_num = row_number()) %>%
+  # Identify the row number of the first 'real' location within each tag_id group
+  # NA_integer_ is used to handle non-'real' locations, na.rm = TRUE to ignore these NAs
+  mutate(first_real_row = min(ifelse(location == "real", row_num, NA_integer_), na.rm = TRUE)) %>%
+  # Filter out rows that are before the first 'real' location in each tag_id group
+  filter(row_num >= first_real_row) %>%
+  # Remove the helper columns 'row_num' and 'first_real_row' as they are no longer needed
+  select(-row_num, -first_real_row) %>%
+  # Regroup by tag_id for subsequent operations
+  group_by(tag_id) %>%
+  # Create a 'group' identifier for consecutive 'location' values using run-length encoding (rle)
+  mutate(group = with(rle(location), rep(seq_along(lengths), lengths))) %>%
+  # Group by both tag_id and the newly created 'group' to determine group lengths
+  group_by(tag_id, group) %>%
+  # Calculate the length of each group
+  mutate(group_length = n()) %>%
+  # Regroup by tag_id to carry forward the last 'real' x and y values
+  group_by(tag_id) %>%
+  # Assign the current 'real' x and y values, or NA if the location is not 'real'
+  mutate(
+    last_real_x = ifelse(location == "real", x, NA_real_),
+    last_real_y = ifelse(location == "real", y, NA_real_)
+  ) %>%
+  # Handle the case where the first value is NA for 'last_real_x' and 'last_real_y'
+  # If the first value is NA, replace it with the current x and y values
+  mutate(
+    last_real_x = ifelse(is.na(last_real_x) & row_number() == 1, x, last_real_x),
+    last_real_y = ifelse(is.na(last_real_y) & row_number() == 1, y, last_real_y),
+    # Carry forward the last known 'real' x and y values
+    last_real_x = zoo::na.locf(last_real_x, na.rm = FALSE),
+    last_real_y = zoo::na.locf(last_real_y, na.rm = FALSE)
+  ) %>%
+  # Un-group for final manipulation
+  ungroup()%>%
+  # Manipulate x and y values for 'filled' locations with a group_length >= 25
+  # Using a custom function 'coord_manipulation_function'
+  group_by(tag_id,t)%>%
+mutate(
+    x = if_else(location == "filled" & group_length >= 25, coord_manipulation_function(last_real_x, 10), x),
+    y = if_else(location == "filled" & group_length >= 25, coord_manipulation_function(last_real_y, 10), y)
+  )
+
+
+
+
+saveRDS(df,
+        here("output",
+             "data-proc",
+             "swallows_final_2024.RDS"))
+```
+
+
+# AKDE overlap calculations
+
+```{r}
+ctmm_overlap <- overlap(ctmm_fit_tag)
+akde_overlap <- overlap(AKDES_tag_weights)
+
+non_infected<-cmr%>%filter(blood_infection=="n")%>%pull(tag_id)
+infected<-cmr%>%filter(blood_infection=="y")%>%pull(tag_id)
+
+
+h_o<-overlap(AKDES_tag_weights%>%keep(names(.) %in% non_infected))
+i_o<-overlap(AKDES_tag_weights%>%keep(names(.) %in% infected))
+
+mean(h_o$CI[,,"est"],na.rm=T)
+sd(h_o$CI[,,"est"],na.rm=T)
+
+mean(i_o$CI[,,"est"],na.rm=T)
+sd(i_o$CI[,,"est"],na.rm=T)
+
+
+# infected individuals
+RS_infected<-cmr%>%
+  filter(blood_infection=="y" & species =="RS")%>%
+  pull(tag_id)
+
+RS_non_infected<-cmr%>%
+  filter(blood_infection=="n" & species =="RS")%>%
+  pull(tag_id)
+
+
+overlap_RS_infected <- overlap(AKDES_tag_weights%>%keep(names(.) %in% RS_infected))
+
+overlap_RS_non_infected <- overlap(AKDES_tag_weights%>%keep(names(.) %in% RS_non_infected))
+
+
+mean(overlap_RS_infected$CI[,,"est"],na.rm=T)
+mean(overlap_RS_infected$CI[,,"low"],na.rm=T)
+mean(overlap_RS_infected$CI[,,"high"],na.rm=T)
+
+
+mean(overlap_RS_non_infected$CI[,,"est"],na.rm=T)
+mean(overlap_RS_non_infected$CI[,,"low"],na.rm=T)
+mean(overlap_RS_non_infected$CI[,,"high"],na.rm=T)
+
+
+# House martin
+# infected individuals
+MS_infected<-cmr%>%
+  filter(blood_infection=="y" & species =="MS")%>%
+  pull(tag_id)
+
+MS_non_infected<-cmr%>%
+  filter(blood_infection=="n" & species =="MS")%>%
+  pull(tag_id)
+
+
+overlap_MS_infected <- overlap(AKDES_tag_weights%>%keep(names(.) %in% MS_infected))
+
+overlap_MS_non_infected <- overlap(AKDES_tag_weights%>%keep(names(.) %in% MS_non_infected))
+
+
+mean(overlap_MS_infected$CI[,,"est"],na.rm=T)
+mean(overlap_MS_infected$CI[,,"low"],na.rm=T)
+mean(overlap_MS_infected$CI[,,"high"],na.rm=T)
+
+
+mean(overlap_MS_non_infected$CI[,,"est"],na.rm=T)
+mean(overlap_MS_non_infected$CI[,,"low"],na.rm=T)
+mean(overlap_MS_non_infected$CI[,,"high"],na.rm=T)
+
+
+
+########
+
+m2<-akde_overlap$CI[,,"est"]
+
+corrplot::corrplot(m2,order="FPC",type = "upper")
+
+
+melted<-reshape2::melt(m2)%>%
+  mutate(Var1=as.factor(Var1),
+         Var2=as.factor(Var2)
+         )
+
+
+ggplot(data = melted, aes(x=Var1, y=Var2, fill=value)) +
+  geom_tile()+
+  viridis::scale_fill_viridis(discrete=FALSE,
+                              name= "Bhattacharyya coefficient")+
+  d6::theme_d6()+
+  labs(x=element_blank(),
+       y=element_blank())+
+  theme(axis.text.x = element_text(angle = 90),
+        legend.key.width=unit(2,"cm"))
+
+
+#ggsave(here("plots","overlap.png"), width = 20, height = 20, units = "cm",bg="white")
+```
+
+***
+
+<details><summary>Session Info</summary>
+
+```{r sessionInfo}
+## DO NOT REMOVE!
+## We store the settings of your computer and the current versions of the
+## packages used to allow for reproducibility
+Sys.time()
+#git2r::repository() ## uncomment if you are using GitHub
+sessionInfo()
+```
+
+</details>

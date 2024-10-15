@@ -1,0 +1,536 @@
+---
+title: "Multievent_simulations"
+format: html
+editor: visual
+---
+
+```{r}
+library("tidyverse")
+library("here")
+library("nimble")
+library("MCMCvis")
+library("coda")
+library("conflicted")
+library("furrr")
+```
+
+# Simulation - to validate model
+
+Here, we mirror our nimble model to see if the model would estimate values correctly given the actual sample sizes etc. for both swallow models
+
+```{r}
+################################################################################
+# MCMC Details
+################################################################################
+
+n.iter <- 10000
+n.burnin <- 2000
+n.chains <- 3
+```
+
+# Custom function to simulate our study system
+
+```{r}
+simulate_study_system <-
+  function(n_individual,
+           years,
+           secondaries,
+           phi_healthy,
+           phi_infected,
+           p_healthy,
+           p_infected,
+           betaTest,
+           psi_infect,
+           psi_recovery,
+           piBP_neg) {
+    # Set total number of individuals monitored
+    n <- n_individual
+    
+    # Set number of years of monitoring
+    Tt <- years
+    
+    # Set number of capture events per year
+    K <- secondaries
+    
+    
+    #m<-c(table(sample(rep(1:3,length.out=n))))
+    # Create index of first capture for all individuals
+    first <- sample(1:Tt, n,replace=TRUE)
+    
+    #
+    #m<-c(table(sample(1:Tt, n_individual, replace = TRUE)))
+    
+    # Set parameters
+    phi <-
+      c(phi_healthy, phi_infected)  # Survival probability, healthy and infected
+    p <-
+      c(p_healthy, p_infected)        # Detection probability, healthy and infected
+    betaTest <- betaTest                 # Proportion tested
+    
+    # State transition probabilities
+    psi_infect <- psi_infect
+    psi_recovery <- psi_recovery
+    
+    piBP_neg <-piBP_neg # Prevalence of healthy individuals in the first year
+    
+    # Package results into a list
+    results <- list(
+      n = n,
+      Tt = Tt,
+      K = K,
+      first = first,
+      phi = phi,
+      p = p,
+      betaTest = betaTest,
+      psi_infect = psi_infect,
+      psi_recovery = psi_recovery,
+      piBP_neg = piBP_neg
+    )
+    
+    return(results)
+  }
+```
+
+# Simulate parameter data
+
+```{r}
+# Constant parameters
+n_individual <- 385
+years <- 4
+secondaries <- 2
+model_runs<-50
+
+
+# Generate argument list for 50 runs with random parameters
+args_list <-
+  replicate(
+    model_runs,
+    list(
+      n_individual = n_individual,
+      years = years,
+      secondaries = secondaries,
+      phi_healthy = runif(1, 0.2, 0.8),
+      phi_infected = runif(1, 0.2, 0.8),
+      p_healthy = runif(1, 0.2, 0.8),
+      p_infected = runif(1, 0.2, 0.8),
+      betaTest = runif(1, 0.5, 1),
+      psi_infect = runif(1, 0, 1),
+      psi_recovery = runif(1, 0, 1),
+      piBP_neg = runif(1, 0, 1)
+    ),
+    simplify = FALSE
+  )
+
+# Apply the function to each set of arguments
+parameters <- purrr::map(args_list, ~do.call(simulate_study_system, .x))
+
+```
+
+# Calculate matrices
+
+```{r}
+calculate_matrices <- function(params) {
+  
+# Access list elements
+    n = params$n 
+    Tt = params$Tt
+    secondaries = params$K
+    first = params$first
+    phi = params$phi
+    p = params$p
+    betaTest = params$betaTest 
+    psi_infect = params$psi_infect
+    psi_recovery = params$psi_recovery 
+    piBP_neg = params$piBP_neg    
+  
+  
+  
+##true/observed state probability matrix
+##same as in Nimble model
+omega<-matrix(0, nrow=3, ncol=7)
+## all zero cells are pre-filled
+
+## true state z=1 (negative)
+omega[1,2] <- betaTest * (p[1] * (1-p[1]))*2       # Pr(not infected, captured 1x): tested, captured either first or second time
+omega[1,3] <- betaTest * p[1]^2                      # Pr(not infected, captured 2x): tested, captured first and second time
+omega[1,4] <- 0                                        # Pr(infected, captured 1x)
+omega[1,5] <- 0                                        # Pr(infected, captured 2x)
+omega[1,6] <- (1 - betaTest) * (p[1] * (1-p[1]))*2 # Pr(not tested, captured 1x)
+omega[1,7] <- (1 - betaTest) * p[1]^2                # Pr(not tested, captured 2x)
+omega[1,1] <- 1-sum(omega[1,2:7])                      # Non-detection
+
+## true state z=2 (positive)
+omega[2,2] <- 0                                        # Pr(not infected, captured 1x): tested, captured either first or second time
+omega[2,3] <- 0                                        # Pr(not infected, captured 2x): tested, captured first and second time
+omega[2,4] <- betaTest * (p[2] * (1-p[2]))*2       # Pr(infected, captured 1x)
+omega[2,5] <- betaTest * p[2]^2                      # Pr(infected, captured 2x)
+omega[2,6] <- (1 - betaTest) * (p[2] * (1-p[2]))*2 # Pr(not tested, captured 1x)
+omega[2,7] <- (1 - betaTest) * p[2]^2                # Pr(not tested, captured 2x)
+omega[2,1] <- 1-sum(omega[2,2:7])                      # Non-detection
+
+## true state z=3 (dead): fixed non-detection
+omega[3,1] <- 1
+
+##transition probability matrix, as in Nimble model
+gamma<-matrix(0, nrow=3, ncol=3)
+## all zero cells are pre-filled
+
+#starting state z=1 (negative, alive)
+gamma[1,1] <- phi[1] * (1 - psi_infect)      # Pr(H t -> H t+1)
+gamma[1,2] <- phi[1] * psi_infect            # Pr(H t -> I t+1)
+gamma[1,3] <- 1 - phi[1]                     # Pr(H alive t -> dead t+1)
+
+#starting state z=2 (positive, alive)
+gamma[2,1] <- phi[2] * psi_recovery          # Pr(I t -> H t+1)
+gamma[2,2] <- phi[2] * (1 - psi_recovery)    # Pr(I t -> I t+1)
+gamma[2,3] <- 1 - phi[2]                     # Pr(I alive t -> dead t+1)
+
+#starting state z=3 (dead): absorbing state
+gamma[3,3] <- 1                       # Pr(dead t -> dead t+1)
+
+
+### set up structures to keep track of state (healthy, infected, dead)
+### and of detections
+z<-matrix(NA, nrow=n, ncol=Tt)
+y<-matrix(NA, nrow=n, ncol=Tt)
+
+
+### loop through individuals and years to generate states and observations
+### mirrors Nimble model
+
+for (i in 1:n){
+  ##state upon first capture - can only be healthy or infected
+  ## +1 to turn 0/1 variable into 1/2 indicator
+  ## 1=healthy, 2=infected
+  z[i,first[i]]<-rbinom(1,1,(1-piBP_neg))+1
+
+  ##condition observation probabilities on capture
+  omega1<-omega[z[i,first[i]], 2:7]/sum(omega[z[i,first[i]], 2:7])
+  ##'which' converts vector from rmultinom to single categorical variable
+  y[i,first[i]]<-which(rmultinom(1, 1, omega1) == 1)
+
+  ##if captured for the first time in last year, skip time loop
+  if (first[i]==Tt) next
+
+  for (t in (first[i]+1):Tt){
+    z[i, t]<-which(rmultinom(1,1,gamma[z[i, t-1],]) == 1)
+    y[i,t]<-which(rmultinom(1, 1, omega[z[i, t],]) == 1)
+  }
+}
+
+constants <- list(N = n, #individuals
+                  K = Tt, #sampling occasions
+                  first = first) #first capturing
+
+initial.values <-  list(phiBP_neg = runif(1, 0, 1),
+                        phiBP_pos = runif(1, 0, 1),
+                        pBPneg = runif(1, 0, 1),
+                        pBPpos = runif(1, 0, 1),
+                        piBP_neg = runif(1, 0, 1),
+                        betaTest = runif(1, 0, 1),
+                        psi_BPnegpos = runif(1, 0, 1),
+                        psi_BPposneg = runif(1, 0, 1),
+                        z = z)
+
+
+
+return(list(
+  omega = omega,
+  gamma = gamma,
+  z = z,
+  y = y,
+  N=n,
+  K=Tt,
+  first = first
+  
+))
+
+
+}
+
+
+matrices<-purrr::map(parameters,calculate_matrices)
+```
+
+# Model formula
+
+```{r}
+M1.disease.recovery <- nimbleCode({
+  
+  # -------------------------------------------------
+  # Parameters:
+  # phiBP_neg: survival probability being non-infected
+  # phiBP_pos: survival probability being infected
+  # psi_BPnegpos: transition probability from being non-infected to being infected
+  # psi_BPposneg: transition probability from being infected to being non-infeted
+  # piBP_neg:   prob. of new encountered captures being in initial state non-infected
+  # betaTest:
+  # pBPneg: probability of being captured healthy / susceptible
+  # pBPpos: probability of being captured infected 
+  ################################################################
+  # States (z):
+  ################################################################
+  # 1 alive & not infected
+  # 2 alive Infected
+  # 3 dead
+  # Observations (y) - expanded to allow for 1 or 2 detections:  
+  # 1 = non-detected
+  # 2 = not infected & captured 1x
+  # 3 = not infected & captured 2x
+  # 4 = infected & captured 1x 
+  # 5 = infected & captured 2x 
+  # 6 = unknown (untested) & captured 1x 
+  # 7 = unknown (untested) & captured 2x 
+  # -------------------------------------------------
+  
+  
+  ################################################################
+  #Priors
+  ################################################################
+  phiBP_neg ~ dunif(0, 1)   # prior survival non-infected
+  phiBP_pos ~ dunif(0, 1)   # prior survival infected
+  psi_BPnegpos ~ dunif(0, 1)  # prior transition non-infected -> infected
+  psi_BPposneg ~ dunif(0, 1)  # prior transition non-infected -> infected
+  pBPneg ~ dunif(0,1)     # prior detection susceptible
+  pBPpos ~ dunif(0,1)     # prior detection infected
+  piBP_neg ~ dunif(0, 1)     # prob init state non-infected
+  #betaTest ~ dunif(0, 1)   #probability to be tested when captured
+  #fixed quantity, no need to estimate/provide a prior, provide as data
+  
+  ################################################################
+  #Initial state probabilities
+  ################################################################
+  delta[1] <- piBP_neg         # Pr(non-infected t = 1) = pi
+  delta[2] <- 1 - piBP_neg     # Pr(infected t = 1) = 1 - pi
+  #delta[3] <- 0          # Pr(dead t = 1) = 0
+  #not necessary, since model conditions on detection and no-one 
+  #               can be dead and detected
+  
+  ################################################################
+  # state transitions 
+  ################################################################
+  
+  #starting state z=1 (negative, alive)
+  gamma[1,1] <- phiBP_neg * (1 - psi_BPnegpos)      # Pr(H t -> H t+1)
+  gamma[1,2] <- phiBP_neg * psi_BPnegpos            # Pr(H t -> I t+1)
+  gamma[1,3] <- 1 - phiBP_neg                     # Pr(H alive t -> dead t+1)
+  
+  #starting state z=2 (positive, alive)
+  gamma[2,1] <- phiBP_pos * psi_BPposneg          # Pr(I t -> H t+1)
+  gamma[2,2] <- phiBP_pos * (1 - psi_BPposneg)    # Pr(I t -> I t+1)
+  gamma[2,3] <- 1 - phiBP_pos                     # Pr(I alive t -> dead t+1)
+  
+  #starting state z=3 (dead): absorbing state
+  gamma[3,1] <- 0                       # Pr(dead t -> alive t+1)
+  gamma[3,2] <- 0                       # Pr(dead t -> alive t+1)
+  gamma[3,3] <- 1                       # Pr(dead t -> dead t+1)
+  
+  ################################################################
+  # observation matrix 
+  ################################################################
+  
+  ##if observed, what state
+  ## rows: true states
+  ## columns: possible observed states
+  ## probabilities: products of detection probabilities and testing
+  ##                probability
+
+  ## true state z=1 (negative)
+  omega[1,1] <- 1-sum(omega[1,2:7])                      # Non-detection 
+  omega[1,2] <- betaTest * (pBPneg * (1-pBPneg))*2       # Pr(not infected, captured 1x): tested, captured either first or second time
+  omega[1,3] <- betaTest * pBPneg^2                      # Pr(not infected, captured 2x): tested, captured first and second time
+  omega[1,4] <- 0                                        # Pr(infected, captured 1x)
+  omega[1,5] <- 0                                        # Pr(infected, captured 2x)
+  omega[1,6] <- (1 - betaTest) * (pBPneg * (1-pBPneg))*2 # Pr(not tested, captured 1x)
+  omega[1,7] <- (1 - betaTest) * pBPneg^2                # Pr(not tested, captured 2x)
+  
+  ## true state z=2 (positive)
+  omega[2,1] <- 1-sum(omega[2,2:7])                      # Non-detection 
+  omega[2,2] <- 0                                        # Pr(not infected, captured 1x): tested, captured either first or second time
+  omega[2,3] <- 0                                        # Pr(not infected, captured 2x): tested, captured first and second time
+  omega[2,4] <- betaTest * (pBPpos * (1-pBPpos))*2       # Pr(infected, captured 1x)
+  omega[2,5] <- betaTest * pBPpos^2                      # Pr(infected, captured 2x)
+  omega[2,6] <- (1 - betaTest) * (pBPpos * (1-pBPpos))*2 # Pr(not tested, captured 1x)
+  omega[2,7] <- (1 - betaTest) * pBPpos^2                # Pr(not tested, captured 2x)
+
+  ## true state z=3 (dead): fixed non-detection
+  omega[3,1] <- 1              
+  omega[3,2] <- 0                
+  omega[3,3] <- 0      
+  omega[3,4] <- 0          
+  omega[3,5] <- 0
+  omega[3,6] <- 0
+  omega[3,7] <- 0
+
+  ################################################################
+
+ # likelihood
+  #loop over individuals
+  for (i in 1:N){
+
+    #latent health state at first capture
+    z[i,first[i]] ~ dcat(delta[1:2])
+    
+    # omega first encounter
+    # use same observation probabilities, but rescale so they sum to 1 excluding y=1 (not observed)
+
+    omega1[i,1:6]<-omega[z[i,first[i]], 2:7]/sum(omega[z[i,first[i]], 2:7])
+    y[i,first[i]] ~ dcat(omega1[i,1:6])
+    
+
+    for (j in (first[i]+1):K){
+
+      #latent health state 
+      z[i,j] ~ dcat(gamma[z[i,(j-1)],1:3])
+
+      #observations given z
+      y[i,j] ~ dcat(omega[z[i,j], 1:7])
+
+    }
+  }}
+)
+
+################################################################################
+# Monitors
+################################################################################
+M1.monitors.disease <- c("phiBP_neg",
+              "phiBP_pos",
+              "pBPneg",
+              "pBPpos",
+              "piBP_neg",
+              "psi_BPnegpos",
+              "psi_BPposneg",
+              "betaTest")
+```
+
+# run models
+
+```{r}
+run_model <- function(mat) {
+
+  # Prepare data and initial values
+  data <- list(y = mat$y)
+  
+  inits <- list(
+    phiBP_neg = runif(1, 0, 1),
+    phiBP_pos = runif(1, 0, 1),
+    pBPneg = runif(1, 0, 1),
+    pBPpos = runif(1, 0, 1),
+    piBP_neg = runif(1, 0, 1),
+    betaTest = runif(1, 0, 1),
+    psi_BPnegpos = runif(1, 0, 1),
+    psi_BPposneg = runif(1, 0, 1),
+    z = mat$z
+  )
+
+  # Retrieve constants 
+  constants <- list(N = mat$N, #individuals
+                  K = mat$K, #sampling occasions
+                  first = mat$first) #first capturing
+
+  #Run nimbleMCMC
+  model <- nimbleMCMC(
+    code = M1.disease.recovery,
+    constants = constants,
+    data = data,
+    inits = inits,
+    monitors = M1.monitors.disease,
+    niter = n.iter,
+    nburnin = n.burnin,
+    nchains = n.chains,
+    WAIC = TRUE
+  )
+
+  
+mcmcsummary<-MCMCsummary(model[[1]], 
+                         round = 3,probs = c(0.055, 0.25,0.75, 0.945))%>%
+  rownames_to_column(var = "estimate")
+
+
+return(mcmcsummary)
+
+}
+
+
+plan(multisession, workers = 6)
+all_models<-furrr::future_map(matrices,run_model)
+
+extract_pars <- function(lst) {
+  # Extract psi_infection
+  phiBP_neg <- lst[["phi"]][[1]]
+  phiBP_pos <- lst[["phi"]][[2]]
+  
+  p_neg <- lst[["p"]][[1]]
+  p_pos <- lst[["p"]][[2]]
+  
+  betaTest <- lst[["betaTest"]]
+  
+  psi_BPnegpos <- lst[["psi_infect"]]
+  psi_BPposneg <- lst[["psi_recovery"]]
+  
+  piBP_neg <- lst[["piBP_neg"]]
+  
+  
+  return(data.frame(
+    true_value = c(
+      phiBP_neg,
+      phiBP_pos,
+      p_neg,
+      p_pos,
+      betaTest,
+      psi_BPnegpos,
+      psi_BPposneg,
+      piBP_neg
+    ),
+    estimate = c(
+      "phiBP_neg",
+      "phiBP_pos",
+      "pBPneg",
+      "pBPpos",
+      "betaTest",
+      "psi_BPnegpos",
+      "psi_BPposneg",
+      "piBP_neg"
+      
+      
+    )))
+}
+
+# save true parameters
+true_params_df<-map(parameters,extract_pars)
+
+joined_list <- map2(all_models, true_params_df,~dplyr::left_join(.x, .y))
+
+# Define the renaming and mutation function
+rename_and_mutate <- function(df) {
+  df <- df %>%
+    rename(LCI89 = "5.5%", UCI89 = "94.5%", LCI50 = "25%", UCI50 = "75%") %>%
+    mutate(
+      in50ci = ifelse(true_value > LCI50 & true_value < UCI50, TRUE, FALSE),
+      in89ci = ifelse(true_value > LCI89 & true_value < UCI89, TRUE, FALSE),
+      deviate_from_mean = abs(mean-true_value)
+    )
+  return(df)
+}
+
+
+modified_list <- map(joined_list, rename_and_mutate)
+
+combined_df <- bind_rows(modified_list, .id = "model")
+
+test_survival<-combined_df%>%
+  dplyr::filter(estimate %in% c("phiBP_pos","phiBP_neg"))
+
+
+table(test_survival$in50ci)
+table(test_survival$in89ci)
+
+mean(test_survival$deviate_from_mean)
+sd(test_survival$deviate_from_mean)
+
+
+test_survival<-test_survival%>%
+ mutate_if(is.numeric, round,digits=3)
+
+
+```
