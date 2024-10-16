@@ -1,0 +1,18 @@
+date,ring_id,tag_id,sample_id,species,sex,test,comments,plasmodium,haemoproteus,leucocytozoon
+07/06/2020,ZI13659,2449,6,RS,m,"40µl Blut, stark verklumpt",bisher kein NanoDrop,n,n,n
+07/06/2020,ZI13658,2435,7,RS,m,"40µl Blut, stark verklumpt",bisher kein NanoDrop,n,n,n
+07/06/2020,ZI13654,2446,8,RS,m,30µl,bisher kein NanoDrop,double,n,n
+06/06/2020,ZI13614,NA,9,MS,m,"40µl Blut, stark verklumpt, Mini Column Filter verklebt",bisher kein NanoDrop,double,n,n
+23/05/2019,VH59005,NA,1,GA,f,yes (10-15µl bzw. nur Leftoverklumpen)+ easy,gute Ergebnisse RNA/ DNA-Gehalt obwohl verklumpter Bluttropfen/ wenig Startmaterial ,n,n,n
+07/06/2020,ZI13645,NA,3,RS,m,30µl,bisher kein NanoDrop,y,n,n
+07/06/2020,ZI13674,NA,4,RS,m,40µl,bisher kein NanoDrop,n,n,n
+26/05/2020,VH59030,2449,5,GA,f,xµl in RNALater,bisher kein NanoDrop,n,y,n
+06/06/2020,ZI13620,NA,6,MS,m,30µl,"Mini Column verklebt, bisher kein NanoDrop",n,n,n
+26/05/2020,VH50930,2449,7,GA,f,30µl in Animal Blood Easy,bisher kein NanoDrop,n,n,n
+06/06/2020,VH59072,NA,8,MS,m,40µl,bisher kein NanoDrop,n,n,y
+26/05/2020,ZI13606,NA,9,MS,m,40µl,"Mini Column verklebt, bisher kein NanoDrop",n,y,n
+06/06/2020,VH59062,NA,10,MS,m,30µl,bisher kein NanoDrop,n,y,n
+06/06/2020,ZI13617,NA,11,MS,m,30µl,bisher kein NanoDrop,n,n,n
+06/06/2020,NA213601,2513,12,A,NA,30µl in Easy ,bisher kein NanoDrop,double,n,n
+27/05/2020,ZI13757,NA,13,MS,m,30µl,bisher kein NanoDrop,n,n,n
+07/06/2020,ZI13650,NA,14,RS,m,40µl,bisher kein NanoDrop,n,n,n

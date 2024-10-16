@@ -1,0 +1,688 @@
+location,date,weather,temperature_celsius,time,ringer,ring_id,ring_recap,tag_id,species,sex,age,tars_mm,wing_mm,8prim_mm,fat,muscle,tail_mm,tail_fork_mm,weight_g,blood,faeces,cloaca,feather,choane,ectoparasites,comments
+Dedelow-MS,23/05/2023,sun,22,09:50:00,MG,VH80502,y,,MS,m?,a,11.1,117,90,1,1,,,19.7,y,n,y,y,y,,
+Wiebke,23/05/2023,sun,22,10:00:00,MG,VH80545,y,,MS,?,a,10.7,116,83,2,2,,,17.4,y,y,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,10:05:00,MG,VH80554,,2884,MS,m?,a,11.5,115,90,3,2,,,20.2,y,n,n,y,y,,
+Dedelow-MS,23/05/2023,sun,22,10:14:00,MG,VH80555,,,MS,m?,a,10.7,117,85,1,1,,,17.2,y,n,n,n,n,LF,
+Dedelow-MS,23/05/2023,sun,22,10:20:00,MG,VH80556,,,MS,m?,a,11.3,110,82,2,2,,,19.1,n,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,10:24:00,MG,VH80557,,,MS,f,a,11.5,115,91,3,2,,,18.8,y,y,y,y,y,,wenig Blut
+Dedelow-MS,23/05/2023,sun,22,10:30:00,M ,VH80525,y,2869,MS,f,a,11.6,115,90,2,2,,,20.3,y,n,y,y,y,,Nest bekannt
+Dedelow-MS,23/05/2023,sun,22,10:37:00,MG,VH80363,y,,MS,f,a,11.5,109,85,2,2,,,18.5,y,y,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,10:42:00,MG,VH80558,,,MS,f'?,a,10.7,109,85,2,2,,,18.9,y,y,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,10:50:00,E,VH80559,,,MS,f,a,11,119,90,2,2,,,19.3,y,y,y,n,y,LF,
+Dedelow-MS,23/05/2023,sun,22,10:53:00,MG,VH80560,,,MS,?,a,11.8,110,85,2,2,,,19.9,n,y,n,n,y,LF,
+Dedelow-MS,23/05/2023,sun,22,11:00:00,E,VH80561,,,MS,?,a,13.6,111,83,1,0,,,,n,y,n,n,n,LF,ist weggeflogen
+Dedelow-MS,23/05/2023,sun,22,11:03:00,MG,VH805562,,,MS,f,a,11,111,89,3,2,,,19.5,y,y,y,y,y,LF,
+Dedelow-MS,23/05/2023,sun,22,11:06:00,E,VH805563,,,MS,f,a,11.6,116,85,3,1,,,20.2,y,y,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,11:09:00,MG,VH80559,y,,MS,,a,,,,,,,,,,,,,,,recatch
+Dedelow-MS,23/05/2023,sun,22,11:10:00,MG,VH80423,y,,MS,m?,a,11.9,117,90,2,2,,,18.6,y,y,y,y,y,,dead
+Dedelow-MS,23/05/2023,sun,22,11:24:00,J,VH80564,,,MS,?,a,12.5,114,84,1,1,,,19.7,y,y,y,y,y,LF,
+Dedelow-MS,23/05/2023,sun,22,11:30:00,MG,VH80565,,2956,MS,f?,a,11.9,113,89,1,1,,,20.2,y,y,y,y,n,,
+Dedelow-MS,23/05/2023,sun,22,11:31:00,U,VH80566,,,MS,?,a,13,113,87,2,1,,,19.7,y,y,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,11:45:00,MG,VH80567,,,MS,f?,a,11.5,110,86,1,1,,,18.2,y,n,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,11:50:00,U,VH80568,,,MS,m?,a,11.5,110,83,0,2,,,17.9,y,y,y,n,y,LF,
+Dedelow-MS,23/05/2023,sun,22,11:55:00,MG,VH80507,y,,MS,m?,a,11.3,106,85,3,2,,,18.9,y,y,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,12:00:00,MG,VH80569,,2973,MS,f,a,11.4,112,88,1,2,,,20.6,y,y,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,12:00:00,U,VH80570,,,MS,?,a,11.4,110,89,2,0,,,19.6,y,y,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,12:03:00,MG,VH80571,,,MS,m,a,11.7,110,87,2,2,,,16.5,y,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,12:05:00,MG,VH80572,,,MS,m?,a,11.3,111,89,1,2,,,17.6,y,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,12:07:00,U,VH80574,,2892,MS,m?,a,11,109,84,1,2,,,20,y,y,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,12:10:00,MG,VH80573,,,MS,f,a,11,115,90,2,2,,,17.1,n,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,12:25:00,MG,VH80575,,,MS,m,a,11.8,110,87,1,0,,,19.7,y,y,y,n,y,LF++,
+Dedelow-MS,23/05/2023,sun,22,12:25:00,U,VH80561,y,2967,MS,,a,,,,,,,,20.2,y,n,y,y,y,,wurde gefangen war aber weggeflogen
+Dedelow-MS,23/05/2023,sun,22,12:30:00,MG,VH80576,,2870,MS,f?,a,11.3,110,86,1,1,,,20.4,y,n,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,12:35:00,U,VH80528,y,,MS,?,a,13,108,82,3,2,,,21.5,n,y,y,n,y,,pregnant
+Dedelow-MS,23/05/2023,sun,22,12:40:00,MG,VH80577,,,MS,f,a,10.6,111,84,4,2,,,22,y,y,n,n,n,LF,pregnant
+Dedelow-MS,23/05/2023,sun,22,12:45:00,U,VH80502,y,,MS,?,a,,,,,,,,19.5,n,y,n,n,n,,
+Wiebke,23/05/2023,sun,22,12:50:00,U,VH80468,y,,RS,?,a,10.6,124,95,0,1,,,20.6,n,n,y,n,y,,Rauchschwalbe mit falschem Ring
+Dedelow-MS,23/05/2023,sun,22,12:52:00,MG,VH80578,,,MS,m?,a,11.6,117,90,1,1,,,19.1,y,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,12:53:00,U,ZI13624,y,,MS,?,a,10.7,107,77,2,1,,,19.2,y,y,y,n,y,LF,
+Dedelow-MS,23/05/2023,sun,22,12:55:00,MG,VH80576,y,,MS,,a,,,,,,,,,,,,,,,
+Dedelow-MS,23/05/2023,sun,22,12:56:00,MG,VH80579,,,MS,f,a,11,110,86,3,2,,,20.5,y,y,n,n,n,,pregnant
+Dedelow-MS,23/05/2023,sun,22,13:00:00,MG,VH80580,,,MS,f,a,10.8,111,86,4,3,,,21.3,y,n,n,n,n,,pregnant
+Dedelow-MS,23/05/2023,sun,22,13:00:00,U,VH80581,,,MS,f,a,10.4,112,86,0,1,,,21.6,y,n,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,13:03:00,MG,VH80503,y,,MS,f?,a,10.7,115,92,3,2,,,19.5,y,y,n,n,n,LF,
+Dedelow-MS,23/05/2023,sun,22,13:10:00,U,VH80582,,,MS,f?,a,10.6,111,87,1,0,,,17.5,n,y,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,13:12:00,MG,VH80583,,,MS,f,a,11.7,114,88,2,2,,,20.1,y,y,n,n,n,,wenig Blut
+Dedelow-MS,23/05/2023,sun,22,13:15:00,MG,VH80584,,,MS,f,a,11.4,114,90,3,1,,,19.2,y,y,y,n,y,LF,
+Dedelow-MS,23/05/2023,sun,22,13:18:00,U,VH80562,Y,,MS,,a,,,,,,,,19.1,,,,,,,was caught today
+Dedelow-MS,23/05/2023,sun,22,13:20:00,U,VH80501,Y,,MS,?,a,10.8,116,83,1,1,,,19.6,y,y,y,n,y,,was tagged the year before
+Dedelow-MS,23/05/2023,sun,22,13:25:00,MG,VH80559,Y,,MS,,a,,,,,,,,,,,,,,,drei mal gefangen heute
+Dedelow-MS,23/05/2023,sun,22,13:30:00,MG,VH80512,Y,,MS,f,a,11.5,110,88,2,1,,,19.6,y,y,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,13:30:00,U,VH80545,Y,,MS,,a,,,,,,,,18,n,y,n,y,n,,
+Dedelow-MS,23/05/2023,sun,22,13:35:00,MG,VH80585,,,MS,f,a,11.4,105,84,2,2,,,20.7,y,n,y,y,y,,Tag removed; little blood
+Dedelow-MS,23/05/2023,sun,22,13:35:00,U,VH80586,,,MS,f,a,10.5,108,77,3,1,,,17.7,n,y,y,n,y,,pregnant
+Dedelow-MS,23/05/2023,sun,22,13:38:00,MG,VH80575,Y,2986,MS,m,a,,,,,,,,20,n,y,n,y,n,,
+Dedelow-MS,23/05/2023,sun,22,13:40:00,U,VH80587,,,MS,f,a,10.2,110,84,2,1,,,20.3,n,y,y,n,y,,tick + pregnant
+Dedelow-MS,23/05/2023,sun,22,13:40:00,MG,VH80571,Y,,MS,,a,,,,,,,,17.5,,,,,,,
+Dedelow-MS,23/05/2023,sun,22,13:45:00,MG,VH80588,,,MS,f,a,11.8,109,88,2,2,,,18.9,y,n,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,14:15:00,U,VH80413,Y,,MS,f,a,10.5,109,83,1,1,,,20.6,n,y,y,n,y,,pregnant
+Dedelow-MS,23/05/2023,sun,22,14:15:00,MG,VH80528,Y,,MS,f,a,11.2,110,82,3,2,,,21.6,y,n,y,n,y,,pregnant
+Dedelow-MS,23/05/2023,sun,22,14:17:00,MG,VH80559,Y,,MS,,a,,,,,,,,,,,,,,,
+Wiebke,23/05/2023,sun,22,14:20:00,MG,ZI13624,Y,,MS,,a,,,,,,,,19.5,,,,,,,
+Dedelow-MS,23/05/2023,sun,22,14:20:00,U,VH80589,,,MS,f,a,11.6,111,86,2,2,,,23.1,y,n,y,n,y,,pregnant
+Dedelow-MS,23/05/2023,sun,22,14:25:00,MG,VH80590,,2976,MS,f?,a,11.6,112,86,2,2,,,20.1,y,n,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,14:30:00,U,VH80591,,2987,MS,?,a,10.9,112,85,2,2,,,21.2,y,y,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,14:32:00,MG,VH80592,,2952,MS,m?,a,10.9,112,85,2,2,,,20.7,y,n,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,14:35:00,MG,VH80593,,2864,MS,f,a,10.6,108,84,3,4,,,20.3,y,y,y,y,y,,
+Wiebke,23/05/2023,sun,22,14:40:00,U,ZK22706,,2894,RS,m,a,11.3,118,90,0,1,97,44,19.1,y,y,y,y,y,LF +,
+Dedelow-MS,23/05/2023,sun,22,14:55:00,MG,VH80509,Y,,MS,m,a,11.3,112,89,1,1,,,19.6,y,y,y,y,y,,
+Dedelow-MS,23/05/2023,sun,22,15:00:00,U,VH80594,,,MS,f,a,11.6,108,84,,,,,20.8,y,y,y,n,y,,pregnant
+Dedelow-MS,23/05/2023,sun,22,15:10:00,MG,VH80354,Y,,MS,f,a,11.4,112,91,3,2,,,19.8,y,y,n,n,n,,was tagged last year; blutet stark
+Dedelow-MS,23/05/2023,sun,22,15:12:00,U,VH80560,Y,,MS,,a,,,,,,,,19.8,,,,,,,
+Wiebke,23/05/2023,sun,22,15:13:00,U,ZK22707,,2880,RS,,a,11.2,130,100,1,1,,,19.4,n,y,y,n,n,LF ++,tail broken and one side missing
+Wiebke,23/05/2023,sun,22,14:20:00,MG,ZK22706,,2876,RS,f,a,10.8,122,92,3,2,84,28,19.7,y,y,y,n,y,LF++,
+Dedelow-MS,23/05/2023,sun,22,15:20:00,U,VH80595,,,MS,f,a,10,112,86,3,2,,,22.5,n,y,y,n,n,,pregnant
+Dedelow-MS,23/05/2023,sun,22,15:23:00,MG,VH80532,Y,,MS,f,a,11.6,112,87,3,3,,,20.8,y,y,y,n,y,,pregnant
+Dedelow-MS,23/05/2023,sun,22,15:30:00,MG,VH80578,Y,,MS,,a,,,,,,,,18.5,,,,,,,
+Wiebke,23/05/2023,sun,22,15:35:00,U,ZK22602,Y,,RS,f,a,11,131,100,1,1,85,35,19.2,y,n,y,n,y,,
+Dedelow-MS,23/05/2023,sun,22,15:38:00,MG,ZK22709,,,MS,,a,,,,,,,,,,,,,,,"ürsprünglich ZK56910, zu enger Ring"
+Dedelow-MS,23/05/2023,sun,22,15:42:00,MG,VH80596,,,MS,?,a,10.3,114,90,3,2,91,,18.9,y,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,15:45:00,U,VH80573,Y,,MS,,a,,,,,,,,17.7,n,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,15:46:00,U,VH80507,,,MS,f,a,11.6,109,84,2,2,,,20.5,y,n,y,n,y,,pregnant
+Dedelow-MS,23/05/2023,sun,22,15:46:00,MG,VH80509,Y,,MS,,a,,,,,,,,19.6,n,n,n,n,n,,to light to tag
+Wiebke,23/05/2023,sun,22,15:48:00,MG,ZV22710,,,RS,f,a,10.9,122,86,2,1,91,28,20.3,n,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,15:51:00,MG,VH80059,Y,,MS,,a,,,,,,,,21,n,n,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,15:51:00,U,VH80571,Y,,MS,,a,,,,,,,,17.4,n,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,15:55:00,MG,VH80580,Y,,MS,,a,,,,,,,,21.7,n,n,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,16:00:00,MG,VH80567,y,,MS,,a,,,,,,,,18.9,n,n,n,n,n,,
+Wiebke,23/05/2023,sun,22,16:16:00,MG,ZK22711,,2865,RS,m,a,10.8,124,96,3,2,99,43,19,n,y,y,y,y,,blood sampling not possible
+Dedelow-MS,23/05/2023,sun,22,16:25:00,U,VH80502,Y,,MS,,a,,,,,,,,21.3,n,y,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,16:25:00,MG,VH80544,Y,,MS,m,a,10.4,112,87,2,1,,,21.8,y,n,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,16:26:00,U,VH80571,Y,,MS,,a,,,,,,,,17.4,n,n,n,n,n,,
+Dedelow-MS,23/05/2023,sun,22,17:02:00,MG,VH80561,Y,,MS,,a,,,,,,,,,,,,,,,Tag neu befestigt
+MVA-Kutzerow,23/05/2023,cloudy,19,11:22:00,CL,VH80601,,,MS,m,a,11.2,109,,2,2,,,19.5,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,11:30:00,CL,VH80602,,,MS,,a,11.2,111,,2,1,,,19,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,11:35:00,CL,VH80603,,,MS,m,a,11.5,111,,2,1,,,18.5,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,11:41:00,CL,VH80604,,2974,MS,f,a,11.1,111,,3,1,,,21.5,y,y,y,n,y,,
+MVA-Kutzerow,23/05/2023,cloudy,19,12:06:00,CL,VH80605,,2878,MS,f,a,11,108,,3,2,,,20.2,y,y,y,y,y,,
+MVA-Kutzerow,23/05/2023,cloudy,19,12:19:00,CL,VH80606,,,MS,,a,12,111,85,2,1,,,19,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,12:34:00,CL,VH80607,,2959,MS,m,a,11.3,106,82,2,1,,,20,y,y,y,y,y,LF,
+MVA-Kutzerow,23/05/2023,cloudy,19,12:45:00,CL,VH80608,,,MS,,a,11.3,114,89,2,2,,,19,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,12:48:00,CL,VH80609,,2899,MS,m,a,11.4,113,96,2,2,,,21,y,y,y,y,y,,
+MVA-Kutzerow,23/05/2023,cloudy,19,13:19:00,CL,VH80610,,,MS,m,a,12.1,114,85,2,1,,,19.5,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,13:31:00,CL,VH80611,,2863,MS,m,a,11.1,111,87,2,2,,,20,y,y,y,y,y,,
+MVA-Kutzerow,23/05/2023,cloudy,19,13:40:00,CL,VH80612,,,MS,m,a,11.6,112,86,2,2,,,18.5,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,13:47:00,CL,VH80613,,,MS,m,a,11.3,111,86,2,1,,,19.5,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,14:10:00,CL,VH80614,,2882,MS,m,a,11.5,113,89,3,1,,,21,y,y,y,y,y,,
+MVA-Kutzerow,23/05/2023,cloudy,19,14:22:00,CL,VH80615,,,MS,f,a,11.5,113,88,3,2,,,20.5,n,n,n,n,n,,dicker Legebauch
+MVA-Kutzerow,23/05/2023,cloudy,19,14:26:00,CL,VH80616,,,MS,f,a,12,116,89,3,2,,,19,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,14:29:00,CL,VH80617,,2975,MS,m,a,12,116,89,2,1,,,20,y,y,y,y,y,,blutet stark
+MVA-Kutzerow,23/05/2023,cloudy,19,14:53:00,CL,VH80618,,,MS,f,a,11.8,110,83,3,1,,,20.8,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,19,15:18:00,CL,VH80619,,2984,MS,f,a,11.8,112,89,2,1,,,21.5,y,y,y,y,y,y,dicker Legenbauch
+MVA-Kutzerow,23/05/2023,cloudy,18,15:28:00,CL,VH80620,,,MS,m,a,11.6,111,86,2,1,,,19,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,18,15:33:00,CL,VH80621,,,MS,m,a,11.6,111,87,2,2,,,19.5,n,n,n,n,n,,
+MVA-Kutzerow,23/05/2023,cloudy,18,15:47:00,CL,VH80622,,2875,MS,m,a,11.5,112,87,2,1,,,20,y,n,y,y,y,,
+MVA-Kutzerow,23/05/2023,cloudy,18,16:00:00,CL,VH80623,,,MS,m,a,11.8,110,84,2,1,,,20.5,n,n,n,n,n,LF,
+MVA-Kutzerow,23/05/2023,cloudy,18,16:25:00,CL,VH80624,,,MS,m,a,11.7,112,84,2,1,,,18.5,n,n,n,n,n,,
+Futterhaus,23/05/2023,cloudy/warm,,10:20:00,WU,ZK56901,,,RS,m,a,11.2,128,,1,2,,88,19.5,n,y,n,n,y,LF,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56902,,,RS,f?,a,11.9,125,,0,3,,26,19,y,y,y,n,y,LF,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56903,,,RS,f,a,11.9,123,,1,3,88,39,22,,,,,,,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56904,,,RS,m,a,11.1,127,,1,2,,53,19,n,n,y,n,y,,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56905,,2897,RS,m,a,11.2,120,,0,3,,100,,n,y,y,n,y,,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56906,,2888,RS,m,a,11.5,121,,0,3,,71,19.3,y,y,y,n,y,LF,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56907,,2886,RS,m?,a,11.1,127,,1,3,,44,20.5,y,y,y,n,y,,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56908,,2972,RS,m,a,11.4,124,,1,2,,54,20.7,y,n,y,n,y,,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56909,,2985,RS,m,a,10.9,126,,0,3,,116,19.1,n,y,y,n,y,LF,"Vene nicht gefunden, hat gezittert"
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZI13670,,2879,RS,m,a,11.4,127,,0,2,,41,21,n,y,n,n,n,,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56911,,2960,RS,m?,a,11.4,125,,1,3,,97,21,y,y,y,n,y,,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56912,,2983,RS,m,a,11.2,123,,1,2,,108,21,y,y,y,n,y,LF+,
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK56913,,2951,RS,m,a,11.8,126,,1,2,,36,22,n,n,y,n,y,,Vene nicht gefunden
+Futterhaus,23/05/2023,cloudy/warm,,,WU,ZK22706,,2978,RS,m,a,11.1,122,,0,2,,95,19.5,n,y,y,n,y,,Vene nicht gefunden
+Lutz-Nix,23/05/2023,cloudy/warm,,,CS,ZK56807,,2861,RS,m,a,11.6,126,,2,3,,73.7,21,y,y,y,y,y,,
+Lutz-Nix,23/05/2023,cloudy/warm,,,CS,ZK56808,,2872,RS,f,a,11.9,124,,5,4,,44.3,22,y,y,y,y,y,,
+Lutz-Nix,23/05/2023,cloudy/warm,,,CS,ZK56809,,2881,RS,f,a,11.3,121,,3,3,,46.9,22,y,y,y,y,y,,
+Lutz-Nix,23/05/2023,cloudy/warm,,,CS,ZK56810,,2958,RS,f,a,12.1,125,,3,3,,50,22.5,y,y,y,y,y,,
+Lutz-Nix,23/05/2023,cloudy/warm,,,CS,ZK56811,,2955,RS,f,a,11.7,124,,2,2,,52.2,22,y,y,y,y,y,,
+Lutz-Nix,23/05/2023,cloudy/warm,,,CS,ZK56812,,,RS,m,a,11.1,122,,1,1,,74.9,18,n,n,n,n,n,,
+Lutz-Nix,23/05/2023,cloudy/warm,,,CS,ZK56813,,2896,RS,m,a,11.5,125,,1,2,,71.2,20,y,n,y,y,y,,
+Fom.Martin Holzendorf,23/05/2023,cloudy/warm,,10:35,CS,ZK56801,,NA,RS,f,a,11.3,117,,1,3,,37.8,18.5,,,,,n,,
+Fom.Martin Holzendorf,23/05/2023,cloudy/warm,,10:50,CS,ZK56802,,NA,RS,m,a,11.3,122,,1,2,,73.9,18.5,,,,,n,,
+Fom.Martin Holzendorf,23/05/2023,cloudy/warm,,11:00,CS,ZK56803,,2868,RS,f,a,11.4,125,,4,1,,48.7,22,,,,,n,,
+Fom.Martin Holzendorf,23/05/2023,cloudy/warm,,13:25,CS,ZK56804,,NA,RS,m,a,11.5,129,,1,2,,79,19,,,,,n,,
+Fom.Martin Holzendorf,23/05/2023,cloudy/warm,,14:05,CS,ZK56805,,2889,RS,f,a,11.2,124,,1,1,,55.4,20,,,,,n,,
+Fom.Martin Holzendorf,23/05/2023,cloudy/warm,,14:25,CS,ZK56806,,2965,RS,f,a,11.4,122,,2,1,,44.1,22,,,,,y,,
+Futterhaus,24/05/2023,cloudy/coldwarm,,09:50:00,WU,ZK66914,,2966,RS,f,a,11.6,126,,1,1,,65,19.5,y,n,y,n,y,,
+Futterhaus,24/05/2023,cloudy/coldwarm,,10:06:00,WU,ZK22669,,2873,RS,m,a,11.4,128,,1,3,,99,19.5,n,n,n,n,n,,"zu früh losgeflogen, nur 2 min getrocknet"
+Futterhaus,24/05/2023,cloudy/coldwarm,,10:45:00,WU,ZK56915,,2963,RS,f,a,11.7,124,,2,2,,74,20.5,y,y,y,n,y,LF,"Beschriftung für CL/CH/Blood für ZK56916 doppelt , eine ist …15, eventuelle Sex test?"
+Futterhaus,24/05/2023,cloudy/coldwarm,,11:05:00,WU,ZK56916,,2980,RS,m,a,11.3,126,,1,3,,53,19.7,y,y,y,n,y,LF+,"siehe kommentar von ZK56915, Tag weit unten"
+Futterhaus,24/05/2023,cloudy/coldwarm,,11:55:00,WU,ZK56917,,,RS,f,a,11.4,126,,2,2,,54,22,,,,,,LF,
+Futterhaus,24/05/2023,cloudy/coldwarm,,11:58:00,WU,ZK56918,,2895,RS,m,a,11.3,124,,1,3,,62.5,16,y,n,n,n,n,,keine swaps
+Futterhaus,24/05/2023,cloudy/coldwarm,,13:08:00,WU,ZK56919,,2968,RS,f,a,10,119,,2,2,,53.9,19.2,y,y,y,n,y,LF,
+Futterhaus,24/05/2023,cloudy/coldwarm,,,WU,ZK56920,,,RS,f,a,11.6,124,,3,2,,52.8,18.7,n,n,n,n,n,,
+Futterhaus,24/05/2023,cloudy/coldwarm,,,WU,ZK56921,,,RS,f,a,10.4,126,,1,3,,57.1,21,n,n,n,n,n,LF,
+Futterhaus,24/05/2023,cloudy/coldwarm,,,WU,ZK56922,,,RS,f,a,11.7,124,,2,2,,37.3,24.5,n,n,n,n,n,LF,
+Futterhaus,24/05/2023,cloudy/coldwarm,,14:10:00,WU,ZK56923,,2954,RS,m,a,10.9,124,,0,3,,55.3,21.3,y,y,y,n,y,,
+MVA-Kutzerow,24/05/2023,,12,09:53:00,CL,VH80625,,,MS,f,a,11.6,112,88,1,1,,,19.2,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,09:53:00,CL,VH80617,y,2975,MS,f,a,,,,,,,,,n,n,n,n,n,,Sender noch dran
+MVA-Kutzerow,24/05/2023,,12,10:00:00,CL,VH80626,,,MS,f,a,11.1,111,85,2,2,,,18.3,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,10:06:00,CL,VH80611,y,2863,MS,m,a,,,,,,,,,,n,n,n,n,,"Ringnummer nicht ganz klar(abgehauen), evtl Sender verloren?"
+MVA-Kutzerow,24/05/2023,,12,10:08:00,CL,VH80627,,,MS,m,a,11.6,109,83,2,1,,,19,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,10:14:00,CL,VH80628,,,MS,m,a,11.8,111,87,2,1,,,19.1,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,10:23:00,CL,VH80629,,2962,MS,f,a,11.7,115,89,2,2,,,20.5,y,y,y,y,y,,
+MVA-Kutzerow,24/05/2023,,12,10:40:00,CL,VH80630,,,MS,m,a,11.3,111,85,2,1,,,18.5,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,10:49:00,CL,VH80631,,,MS,m,a,11.4,110,82,2,2,,,19.5,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,10:58:00,CL,VH80632,,2957,MS,m,a,11.1,114,87,2,2,,,20,y,n,y,y,y,,
+MVA-Kutzerow,24/05/2023,,12,11:09:00,CL,VH80633,,,MS,f,a,11,113,85,2,2,,,18.3,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,11:15:00,CL,VH80634,,,MS,m,a,11.1,108,83,2,2,,,18.5,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,11:30:00,CL,VH80635,,2877,MS,m,a,11.8,113,87,2,1,,,21.5,y,y,y,y,y,,
+MVA-Kutzerow,24/05/2023,,12,11:45:00,CL,VH80636,,2953,MS,m?,a,11.7,109,84,1,1,,,20.5,y,y,y,y,y,,
+MVA-Kutzerow,24/05/2023,,12,11:57:00,CL,VH80637,,2971,MS,m,a,11.2,111,85,2,2,,,20.5,y,y,y,y,y,,
+MVA-Kutzerow,24/05/2023,,12,12:51:00,CL,VH80638,,,MS,m,a,11.2,113,88,2,2,,,18.3,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,13:13:00,CL,VH80639,,,MS,m?,a,11.5,118,86,2,2,,,18.2,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,13:24:00,CL,VH80640,,2950,MS,m?,a,11.6,114,89,2,1,,,20.5,y,y,y,y,y,,blutet start
+MVA-Kutzerow,24/05/2023,,12,14:03:00,CL,VH80641,,,MS,f,a,11.5,115,87,3,2,,,22.5,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,14:14:00,CL,VH80642,,2970,MS,f,a,12,117,89,3,2,,,21,y,n,y,y,y,,zerschlissenes Gefieder
+MVA-Kutzerow,24/05/2023,,12,14:26:00,CL,VH80643,,,MS,f,a,11.3,111,84,2,2,,,19.5,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,14:49:00,CL,VH80644,,2964,MS,m?,a,12.6,112,86,2,1,,,20,y,n,y,y,y,,
+MVA-Kutzerow,24/05/2023,,12,15:03:00,CL,VH80645,,,MS,,a,11.7,112,92,2,2,,,19.8,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,15:10:00,CL,VH80646,,,MS,m,a,11.8,112,88,2,1,,,18.5,n,n,n,n,n,,
+MVA-Kutzerow,24/05/2023,,12,15:12:00,CL,VH80647,,2969,MS,m?,a,11.8,119,91,2,2,,,21.5,y,n,y,y,y,,kein Legebauch
+Dedelow-RS,24/05/2023,,,09:53:00,SKS,ZK22712,,2899,RS,m ?,a,11.8,112,94,1,1,90,,20.8,y,n,y,y,y,LF,
+Dedelow-RS,24/05/2023,,,10:00:00,C,ZK22713,,,RS,f,a,11.7,124,96,4,3,95,47,24.1,n,y,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,10:05:00,SKS,ZK22714,,,RS,f,a,11.4,130,100,4,2,92,44,22.9,y,n,n,n,n,LF,little blood
+Dedelow-RS,24/05/2023,,,10:09:00,MG,ZK22715,,,RS,f,a,11,121,95,3,1,91,33,20.4,y,n,y,n,y ,,
+Wiebke,24/05/2023,,,10:10:00,MG,VH80503,y,,MS,,a,,,,,,,,15.7,,y,,,,,
+Dedelow-RS,24/05/2023,,,10:15:00,SKS,ZK22689,y,,RS,f,a,11.4,124,94,4,2,94,45,21.6,y,n,n,n,,,
+Dedelow-RS,24/05/2023,,,10:18:00,MG,ZK22716,,2982,RS,m,a,11,124,96,1,1,99,40,19.1,y,y,y,y,y,LF+,
+Dedelow-RS,24/05/2023,,,10:23:00,SKS,ZI13787,y,,RS,m,a,11.2,125,97,1,2,116,73,17.6,y,n,y,n,n,LF,
+Dedelow-RS,24/05/2023,,,10:25:00,MG,ZK22717,,,RS,f,a,11.2,122,96,4,2,90,86,20.9,y,y,n,n,n,,little blood
+Dedelow-RS,24/05/2023,,,10:30:00,C,ZK22718,,,RS,f,a,11.1,130,101,4,2,92,48,20.4,y,n,y,y,y,,pregnant
+Dedelow-RS,24/05/2023,,,10:32:00,SKS,ZK22719,,,RS,f,a,11.2,121,94,2,2,83,44,19.9,n,n,n,n,n,,
+Wiebke,24/05/2023,,,10:35:00,MG,VH80570,,,MS,,a,,,,,,,,18.7,,,,,,,
+Dedelow-RS,24/05/2023,,,10:40:00,MG,ZK22720,,,RS,m,a,10.8,131,98,1,0,100,46,18.1,n,n,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,10:42:00,SKS,ZK22721,,,RS,f,a,11.6,120,92,3,3,84,44,22.1,n,n,n,n,n,,pregnant
+Dedelow-RS,24/05/2023,,,10:45:00,MG,ZK22722,,,RS,m,a,11.2,125,100,1,0,101,49,19,y,n,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,10:50:00,SKS,ZK22723,,2977,RS,m,a,10.8,125,97,2,2,117,64,19,y,y,y,y,y,LF,
+Wiebke,24/05/2023,,,10:52:00,MG,VH80413,y,,MS,,a,,,,,,,,,,,,,,,pregnant
+Dedelow-RS,24/05/2023,,,10:55:00,MG,ZK22724,,,RS,m,a,11.5,123,54,0,0,84,38,16.1,n,y,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,10:55:00,SKS,ZI13624,y,,MS,,a,,,,,,,,17.9,,,,,,,
+Dedelow-RS,24/05/2023,,,11:00:00,SKS,ZK22725,,,RS,f?,a,10.8,125,95,3,2,94,44,22.1,y,n,n,n,n,,pregnant
+Dedelow-RS,24/05/2023,,,11:02:00,SKS,ZK22726,,,RS,f,a,11.1,126,98,3,2,92,47,21.8,n,y,n,n,n,LF++,
+Dedelow-RS,24/05/2023,,,11:05:00,MG,ZK22727,,,RS,m,a,10.6,130,101,1,2,125,64,18.7,y,y,y,y,y,LF,
+Dedelow-RS,24/05/2023,,,11:08:00,E,ZK22728,,,RS,m,a,10,126,97,2,1,100,62,19.3,n,y,n,n,n,LF+++,
+Dedelow-RS,24/05/2023,,,11:08:00,MG,ZK22729,,2860,RS,m,a,11.1,124,96,1,1,107,50,19.3,y,n,y,n,y,LF++,
+Wiebke,24/05/2023,,,11:13:00,MG,VH80560,y,,MS,,a,,,,,,,,18.7,,,,,,,
+Dedelow-RS,24/05/2023,,,11:15:00,MG,ZK22611,y,,RS,m,a,11.3,128,99,1,1,118,51,18.7,y,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,11:17:00,SKS,VH80471,,,RS,f,a,11.2,123,93,3,2,85,46,22.8,y,n,y,y,y,,pregnant
+Dedelow-RS,24/05/2023,,,11:18:00,E,ZK22730,,,RS,m,a,10.9,125,99,1,2,108,75,18.4,y,n,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,11:20:00,SKS,ZK22731,,,RS,m,a,11.4,126,94,1,1,99,60,17,y,n,n,n,n,LF,injured on abdomen
+Wiebke,24/05/2023,,,11:21:00,MG,VH80598,,,MS,f,a,11,113,88,3,1,,,19.2,n,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,11:25:00,SKS,VH80381,,,MS,m,a,10.8,113,85,1,1,,,18.4,y,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,11:28:00,E,ZK22732,,2988,RS,f,a,11.3,125,96,2,3,84,50,20,y,y,y,n,n,LF,
+Dedelow-RS,24/05/2023,,,11:30:00,SKS,ZK22733,,2979,RS,f?,a,10.8,127,97,1,1,110,64,21,y,n,y,y,y,,
+Dedelow-RS,24/05/2023,,,11:43:00,E,ZI13651,y,2887,RS,m,a,10.6,124,91,2,2,126,69,19,y,n,y,n,y,,nur eine steuerfedern
+Dedelow-RS,24/05/2023,,,11:43:00,SKS,ZK22734,,2961,RS,m,a,10.9,124,95,1,2,97,61,20.8,y,n,n,n,n,LF+,wehrhaft
+Wiebke,24/05/2023,,,11:52:00,MG,VH80591,y,,MS,,a,,,,,,,,,,,,,,,
+Dedelow-RS,24/05/2023,,,11:55:00,E,ZK22735,,,RS,m,a,10.7,126,99,1,2,105,66,18.4,y,n,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,12:00:00,SKS,ZK22736,,,RS,m,a,10,128,98,1,2,113,67,19.1,n,n,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,12:04:00,E,ZK22737,,2883,RS,f,a,10.6,122,93,2,1,86,47,20.4,y,y,n,n,n,,
+Dedelow-RS,24/05/2023,,,12:04:00,SKS,ZK22621,y,,RS,m?,a,10.6,120,92,2,1,82,36,21.9,n,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,12:10:00,MG,PC35821,,,sparrow,,a,,,,,,,,,n,n,n,n,n,,escaped
+Dedelow-RS,24/05/2023,,,12:10:00,E,ZK22738,,,RS,f,a,10.7,116,98,1,1,73,37,18,n,y,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,12:13:00,SKS,ZK22739,,,RS,m?,a,10,121,90,0,1,81,37,18.5,y,y,y,n,y,LF,
+Dedelow-RS,24/05/2023,,,12:15:00,MG,ZK22646,y,,RS,f,a,10.8,122,94,2,1,99,37,20.6,y,n,y,n,y,,pregnant
+Dedelow-RS,24/05/2023,,,12:22:00,E,ZK22721,y,,RS,,a,,,,,,,,22.2,n,y,n,n,n,,caught todat
+Dedelow-RS,24/05/2023,,,12:22:00,SKS,ZK22740,,,RS,f,a,10.6,120,90,3,2,84,39,20,y,n,n,n,n,,pregnant
+Dedelow-RS,24/05/2023,,,12:25:00,MG,ZK22741,,,RS,m,a,11.2,119,91,0,0,90,32,17.8,y,n,n,n,n,,"injured on abdomen, little blood"
+Dedelow-RS,24/05/2023,,,12:27:00,E,ZK22742,,,RS,f,a,11.3,127,99,3,2,91,49,22.4,y,n,n,n,,,
+Dedelow-RS,24/05/2023,,,12:30:00,SKS,ZK22743,,2890,RS,m,a,11.4,130,94,2,2,115,74,20.6,y,n,y,y,y,LF,
+Dedelow-RS,24/05/2023,,,12:35:00,E,ZK22744,,,RS,f,a,10.7,127,97,3,3,95,45,20.2,n,n,n,n,n,LF,one side of tail missing
+Dedelow-RS,24/05/2023,,,12:37:00,SKS,VH80313,y,,RS,f,a,11.2,130,97,4,2,87,50,21.1,y,n,y,n,y,,
+Dedelow-RS,24/05/2023,,,12:40:00,A,PC35822,,,sparrow,,a,18.2,75,56,,,,,,,,,,,,flew off
+Dedelow-RS,24/05/2023,,,12:45:00,MG,ZK22745,,,RS,m,a,10,118,89,1,1,99,41,17.6,y,y,n,n,n,,
+Dedelow-RS,24/05/2023,,,12:45:00,J,ZK22746,,,RS,f,a,11.5,126,97,1,2,81,38,19.7,y,y,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,12:47:00,MG,ZK22625,y,2898,RS,f,a,10.4,128,99,5,2,89,31,21.9,y,n,y,y,y,,injured on abdomen (old)
+Dedelow-RS,24/05/2023,,,12:50:00,J,ZK22647,,2891,RS,f,a,11.9,121,92,2,1,70,21,19.2,,,,,,,pregnant
+Dedelow-RS,24/05/2023,,,12:52:00,E,PC35823,,,sparrow,,a,18.7,80,80,,,,,28.3,n,n,n,n,n,LF+,
+Dedelow-RS,24/05/2023,,,13:02:00,MG,ZI13675,y,,RS,f?,a,11.2,120,91,2,1,92,35,18.7,n,y,n,n,n,,
+Wiebke,24/05/2023,,,13:10:00,MG,VH80459,y,,RS,,a,,,,,,,,19.7,n,y,n,n,n,,
+Dedelow-RS,24/05/2023,,,13:56:00,MG,ZK22748,,,RS,m,a,10.4,125,104,1,1,94,48,20.8,y,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,13:56:00,J,ZK22749,,,RS,m,a,10.9,131,96,1,1,119,62,19.6,n,y,n,n,n,,injured on goiter
+Wiebke,24/05/2023,,,13:58:00,MG,VH59059,y,2981,MS,,a,11.4,,,,,,,20.4,y,n,y,n,y,,
+Dedelow-RS,24/05/2023,,,14:07:00,J,ZK22750,,,RS,m,a,10.9,132,98,2,1,121,57,22.8,n,n,n,n,n,LF+,
+Dedelow-RS,24/05/2023,,,14:07:00,MG,ZK22751,,,RS,m,a,10.4,123,96,2,2,110,50,21,y,y,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,14:10:00,MG,ZK22752,,,RS,m,a,11.2,122,92,1,2,98,43,20.4,y,n,y,n,y,,
+Dedelow-RS,24/05/2023,,,14:12:00,J,ZK22740,,,RS,,a,10.9,,,,,,,20.6,,,,,,,recatch from today
+Dedelow-RS,24/05/2023,,,14:15:00,J,ZK22753,,,RS,f?,a,11.1,120,91,1,1,76,34,19.6,n,y,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,14:20:00,MG,ZK22754,,,RS,F,a,10.7,120,95,3,2,75,28,21.1,y,y,n,n,n,,pregnant
+Dedelow-RS,24/05/2023,,,14:23:00,J,ZK22755,,,RS,f?,a,11.2,123,93,2,1,81,25,18.6,y,n,n,n,n,LF++,little blood
+Dedelow-RS,24/05/2023,,,14:27:00,MG,ZK22717,y,,RS,,a,,,,,,,,21.1,,,,,,,recatch from today
+Dedelow-RS,24/05/2023,,,14:27:00,J,ZK22714,y,,RS,,a,,,,,,,,22.7,,,,,,,
+Dedelow-RS,24/05/2023,,,14:30:00,MG,ZK22726,y,,RS,,a,,,,,,,,22,,,,,,,
+Dedelow-RS,24/05/2023,,,14:30:00,J,ZK22756,,,RS,,a,11.1,125,96,2,1,97,47,18.4,y,n,y,n,y,LF+,
+Dedelow-RS,24/05/2023,,,14:32:00,MG,ZK22628,y,,RS,f?,a,11.6,124,96,3,2,94,35,21.8,y,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,14:32:00,SKS,ZK22720,y,,RS,,a,,,,,,,,18.3,y,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,14:33:00,MG,ZK22757,,,RS,m,a,10.9,129,99,1,2,120,60,19.3,y,y,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,14:42:00,J,ZK22758,,,RS,m,a,11.2,128,100,1,1,127,62,20.7,y,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,15:03:00,J,ZK22728,y,,RS,,a,,,,,,,,20.3,n,y,n,n,n,,recatch from today
+Dedelow-RS,24/05/2023,,,15:03:00,D,ZK22656,y,,RS,m,a,11.6,124,97,2,1,107,50,18.9,y,n,y,y,y,,
+Dedelow-RS,24/05/2023,,,15:27:00,MG,ZK22616,y,,RS,,a,,,,,,,,21.8,n,n,n,n,n,,injured on ringed leg
+Dedelow-RS,24/05/2023,,,15:36:00,MG,ZK22688,y,,RS,m,a,10.7,125,100,2,2,130,68,18.7,y,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,15:36:00,J,ZK22672,y,,RS,f,a,10.7,126,95,5,2,98,31,21.5,y,n,y,n,y,LF,
+Dedelow-RS,24/05/2023,,,15:44:00,SKS,ZK22747,y,,RS,,a,,,,,,,,19.3,,,,,,,recatch from today
+Dedelow-RS,24/05/2023,,,15:49:00,MG,LX7405,,,RS,f,a,11.6,124,96,3,2,95,37,19.9,y,y,y,n,y,,
+Dedelow-RS,24/05/2023,,,15:49:00,J,ZK22760,,,RS,f,a,11.6,125,92,2,1,82,27,19.7,y,n,y,n,y,,
+Dedelow-RS,24/05/2023,,,15:49:00,SKS,ZK22749,,,RS,,a,11.4,125,95,4,3,83,41,22.9,n,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,16:05:00,J,ZK22761,,,RS,f,a,11.4,127,98,2,2,88,27,24.7,y,y,y,n,y,,pregnant
+Dedelow-RS,24/05/2023,,,16:05:00,MG,VH80479,y,,RS,m,a,11.6,126,99,2,2,150,55,22,y,n,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,16:07:00,SKS,ZK22762,,,RS,m,a,10.1,127,94,1,1,92,61,18,y,n,n,n,n,,
+Dedelow-RS,24/05/2023,,,16:28:00,MG,ZK22740,y,,RS,,a,,,,,,,,,,,,,,,tag on
+Dedelow-RS,24/05/2023,,,16:28:00,J,ZK22763,,,RS,m,a,10.9,127,98,1,1,101,45,19.1,y,y,y,n,y,,
+Dedelow-RS,24/05/2023,,,16:31:00,C,ZK22764,,,RS,f,a,10.7,124,94,3,2,95,56,19.6,y,y,y,y,y,,
+Dedelow-RS,24/05/2023,,,16:28:00,SKS,ZK22700,y,,RS,m,a,,130,91,1,2,108,61,19.2,y,n,n,n,n,LF,
+Dedelow-RS,24/05/2023,,,16:47:00,MG,PC35824,,,sparrow,m,a,19.9,85,NA,NA,NA,NA,NA,27.5,NA,NA,NA,NA,NA,NA,NA
+Lutz-Nix,24/05/2023,,,12:25:00,CS,ZK56813,n,,RS,m,a,11.4,125,NA,1,2,NA,74.7,19,y,y,y,y,y,NA,
+Lutz-Nix,24/05/2023,,,12:45:00,CS,2874,n,,RS,m,a,11.4,122,NA,1,2,NA,76.8,20,y,y,y,y,y,NA,not ringed
+Lutz-Nix,24/05/2023,,,13:50:00,CS,ZK56814,n,,RS,f,a,11.2,124,NA,2,3,NA,47.1,20,y,y,y,y,y,NA,
+Lutz-Nix,24/05/2023,,,14:30:00,CS,ZK56815,n,,RS,f,a,11.8,121,NA,1,1,NA,34.3,21,y,y,y,y,y,NA,
+Dedelow-MS,06/06/2023,sunny,22,10:25:00,MG,VH80599,,,MS,f,a,10.6,113,90,3,2,,,20.8,y,y,y,y,y,,
+Dedelow-MS,06/06/2023,sunny,22,10:32:00,MG,VH80561,y,,MS,m,a,11.7,111,85,1,1,,,19.2,,,,,,,was tagged
+Dedelow-MS,06/06/2023,sunny,22,10:33:00,SKS,VH80600,,,MS,m,a,12.2,111,84,1,1,,,19.6,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,10:34:00,MG,VH80573,y,,MS,f,a,11.4,115,88,4,3,,,22.4,,,,,,,pregnant
+Dedelow-MS,06/06/2023,sunny,22,10:39:00,MG,VH80648,,,MS,m ?,a,11.3,114,84,2,1,,,20.5,,,,,,,blood not possible
+Dedelow-MS,06/06/2023,sunny,22,10:44:00,SKS,VH80354,y,,MS,f,a,11.8,115,90,2,1,,,18.3,,,,,,LF,was tagged
+Dedelow-MS,06/06/2023,sunny,22,10:46:00,MG,VH59071,y,,MS,m ?,a,11.1,114,88,2,1,,,19.1,y,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,10:50:00,SKS,VH80532,y,,MS,f,a,12,,,,,,,19.2,,,,,,,pregnant
+Dedelow-MS,06/06/2023,sunny,22,10:50:00,MG,VH80580,y,,MS,f,a,11.1,110,86,3,2,,,20.1,,y,,,,,
+Dedelow-MS,06/06/2023,sunny,22,10:54:00,MG,VH80649,,,MS,f,a,11,114,88,3,1,,,19.9,y,y,,,,,
+Dedelow-MS,06/06/2023,sunny,22,10:54:00,SKS,VH80576,y,,MS,m,a,11.4,113,85,1,1,,,18.2,,,,,,,was tagged
+Dedelow-MS,06/06/2023,sunny,22,10:59:00,SKS,VH80650,,,MS,m,a,11.6,111,82,2,1,,,21.5,y,,,,,LF,
+Dedelow-MS,06/06/2023,sunny,22,11:00:00,MG,VH80508,y,,MS,m,a,11.2,113,91,2,2,,,19.1,y,,,,,LF,
+Dedelow-MS,06/06/2023,sunny,22,11:05:00,SKS,VH80555,y,,MS,m,a,11.1,113,83,1,1,,,18.2,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:05:00,MG,VH80651,,,MS,f,a,10.8,109,86,3,0,,,19.8,y,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:08:00,CL,VH80544,y,,MS,m,a,,,,,,,,21.5,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:09:00,MG,VH80464,y,,MS,f,a,11.4,114,84,2,2,,,22.1,y,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:10:00,CL,VH80427,y,,MS,f,a,11,111,85,2,1,,,19.4,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,11:15:00,MG,VH80592,y,,MS,m,a,11.3,,,,,,,18.8,,y,,,,,was tagged
+Dedelow-MS,06/06/2023,sunny,22,11:17:00,MG,ZI13624,y,,MS,,a,11.6,,,,,,,19.8,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:18:00,CL,VH80566,y,,MS,f,a,,,,,,,,20.4,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:19:00,MG,VH80591,y,,MS,,a,11.1,,,,,,,20.2,,,,,,,was tagged
+Dedelow-MS,06/06/2023,sunny,22,11:20:00,CL,VH80521,y,,MS,f,a,11.8,110,85,4,2,,,20.4,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,11:20:00,MG,VH80557,y,,MS,f,a,11.5,,,3,2,,,20.7,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:21:00,MG,VH80652,,,MS,m,a,11.8,114,87,1,1,,,17.1,y,,y,,y,,Kralle fehlt
+Dedelow-MS,06/06/2023,sunny,22,11:27:00,MG,VH80564,y,,MS,m,a,11.2,,,1,1,,,18.4,,y,,,,LF,
+Dedelow-MS,06/06/2023,sunny,22,11:27:00,CL,VH80653,,,MS,f,a,11.7,109,85,3,2,,,19.9,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,11:29:00,MG,VH80525,y,,MS,,a,11.5,,,,,,,21,,y,,,,,was tagged
+Dedelow-MS,06/06/2023,sunny,22,11:31:00,MG,VH80654,,,MS,f,a,11,117,84,4,1,,,20.4,y,,,,,LF,
+Dedelow-MS,06/06/2023,sunny,22,11:37:00,CL,VH80559,y,,MS,m,a,11.4,,,,,,,19.7,,,,,,,pregnant
+Dedelow-MS,06/06/2023,sunny,22,11:38:00,MG,VH80655,,,MS,f ?,a,11.7,112,89,2,1,,,19.6,,,,,,LF,no blood
+Dedelow-MS,06/06/2023,sunny,22,11:39:00,CL,VH80656,,,MS,f,a,11.2,110,86,2,1,,,19.7,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,11:41:00,MG,VH80562,y,,MS,m,a,11.7,,,2,1,,,18.5,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,11:47:00,CL,VH59096,y,,MS,m,a,11.5,116,92,1,2,,,20,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,11:47:00,MG,VH80503,y,,MS,f,a,11.2,,,3,1,,,21.2,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:49:00,MG,VH80657,,,MS,m,a,11.2,113,85,1,2,,,18.6,y,y,y,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:53:00,MG,VH80658,,,MS,m,a,11.2,116,82,1,1,,,19.2,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,11:54:00,C,VH80545,y,,MS,,a,11.3,,,,,,,16.3,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:56:00,C,VH80659,,,MS,m,a,11.3,119,90,2,2,,,19.8,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,11:58:00,MG,VH80660,,,MS,f,a,11,118,86,3,1,,,19.5,y,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,11:59:00,SKS,VH80525,y,,MS,,a,,,,,,,,20.7,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,12:01:00,MG,VH80586,y,,MS,f,a,11.3,110,83,3,1,,,21.5,y,,y,,y,,pregnant
+Dedelow-MS,06/06/2023,sunny,22,12:12:00,MG,VH80545,y,,MS,,a,,,,,,,,16.1,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,12:31:00,MG,ZK22602,y,,RS,,a,10.8,,,,,,,18.7,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,12:33:00,MG,VH80661,,,MS,f?,a,11.5,113,86,2,1,,,19.9,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,12:37:00,MG,VH80662,,,MS,f,a,11.8,109,87,3,2,,,20.1,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,12:42:00,MG,VH80594,y,,MS,,a,11.6,,,,,,,19.4,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,12:44:00,MG,VH80663,,,MS,f,a,11.5,109,87,3,2,,,21.3,y,y,,,,LF,
+Dedelow-MS,06/06/2023,sunny,22,12:49:00,MG,ZK22765,,,RS,m,a,10.9,121,99,1,2,99,48,,,y,,,,,
+Dedelow-MS,06/06/2023,sunny,22,12:51:00,MG,VH80579,y,,MS                                  ,m,a,11.5,,,1,1,,,17.9,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,12:51:00,C,VH80508,y,,MS                                  ,,a,10.8,113,91,,,,,19.2,,,,,,LF,
+Dedelow-MS,06/06/2023,sunny,22,12:54:00,MG,VH80545,y,,MS                                  ,,a,10.5,,,,,,,16.6,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,12:55:00,MG,VH80578,y,,MS                                  ,,a,11.8,,,,,,,22.2,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,12:59:00,MG,VH80562,y,,MS                                  ,,a,10.6,,,,,,,18,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:00:00,MG,VH80363,y,,MS                                  ,m,a,11.4,,,,,,,20,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:24:00,MG,VH80525,y,,MS,,a,,,,,,,,20.5,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:27:00,MG,VH80664,,,MS,m,a,11.7,112,87,1,1,,,18.2,y,,,,,LF,
+Dedelow-MS,06/06/2023,sunny,22,13:31:00,MG,VH80648,y,,MS,,a,11.1,,,,,,,20.3,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:32:00,MG,VH80508,y,,MS,,a,,,,,,,,15.9,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:33:00,MG,VH80466,y,,MS,f,a,11.6,115,88,3,2,,,19.8,y,y,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,13:37:00,MG,VH80517,y,,MS,f,a,11.4,115,90,2,1,,,20.3,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:39:00,SKS,VH80559,y,,MS,,a,,,,,,,,19.2,,,,,,,tagged last year
+Dedelow-MS,06/06/2023,sunny,22,13:40:00,MG,VH80558,y,,MS,,a,11.5,,,,,,,19.7,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:41:00,SKS,VH80555,y,,MS,,a,,,,,,,,18.2,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:42:00,MG,VH80665,,,MS,f,a,11.2,111,87,2,2,,,20.8,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,13:54:00,MG,VH80586,y,,MS,,a,,,,,,,,21.4,,,,,,,wing feather worn out
+Dedelow-MS,06/06/2023,sunny,22,13:55:00,MG,VH80505,y,,MS,,a,,,,,,,,16.1,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:57:00,MG,VH80600,y,,MS,,a,11.4,,,,,,,19.5,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,13:58:00,MG,VH80505,y,,MS,m,a,10.9,113,88,1,1,,,19,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,14:04:00,MG,VH80599,y,,MS,,a,10.7,,,,,,,21.3,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:04:00,MG,ZK56816,,,RS,f,a,10.8,128,98,3,2,89,30,19.9,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,14:09:00,MG,VH80576,y,,MS,,a,,,,,,,,19.1,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:09:00,MG,VH80509,y,,MS,,a,11.4,,,,,,,20.3,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:11:00,MG,VH80521,y,,MS,,a,,,,,,,,19.8,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:13:00,MG,VH80554,y,,MS,f,a,11.4,,,,,,,21,,,,,,,was tagted
+Dedelow-MS,06/06/2023,sunny,22,14:14:00,MG,VH80663,y,,MS,,a,,,,,,,,21,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:15:00,MG,VH80666,,,MS,f,a,11.6,108,84,2,2,,,23.4,y,,y,,y,LF,
+Dedelow-MS,06/06/2023,sunny,22,14:21:00,MG,ZK56817,,,RS,f,a,11.7,124,98,7,2,89,28,22.5,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,14:25:00,MG,VH80594,y,,MS,,a,11.4,,,,,,,20,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:28:00,MG,VH80650,y,,MS,,a,11.3,,,,,,,21.4,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:29:00,MG,VH80653,y,,MS,,a,11.4,,,,,,,19.4,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:33:00,MG,VH80555,y,,MS,,a,,,,,,,,18.1,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:33:00,MG,VH80667,,,MS,f,a,11.6,112,89,3,1,,,22.1,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,14:38:00,MG,VH80427,y,,MS,,a,,,,,,,,19.7,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:43:00,MG,VH80378,y,,MS,m,a,11.6,115,89,2,1,,,21.2,y,,,,,,tag in 2021 and 2022
+Dedelow-MS,06/06/2023,sunny,22,14:45:00,J,VH59059,y,,MS,,a,11.6,,,,,,,19,,,,,,,tag 2022 and 2023
+Dedelow-MS,06/06/2023,sunny,22,14:47:00,MG,VH80559,y,,MS,,a,,,,,,,,19.1,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:48:00,MG,VH80558,y,,MS,,a,,,,,,,,20.1,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:48:00,C,VH80667,,,MS,f,a,11.3,115,88,2,2,,,19.2,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:49:00,MG,VH80595,y,,MS,,a,11.3,,,,,,,20.2,y,,y,,y,,
+Dedelow-MS,06/06/2023,sunny,22,14:56:00,MG,VH80532,y,,MS,,a,,,,,,,,19.2,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:57:00,MG,VH80656,y,,MS,,a,,,,,,,,19.8,,,,,,,
+Dedelow-MS,06/06/2023,sunny,22,14:58:00,MG,VH80525,y,,MS,,a,,,,,,,,19.6,,,,,,,tag in 2023
+Dedelow-RS,07/06/2023,sunny,23,10:09:00,MG,ZK22628,y,,RS,,a,10.9,,,,,,,19.2,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,10:11:00,J,VH80327,y,,RS,m,a,10.9,124,95,3,2,77,25,22.5,y,,,,,,pregnant
+Dedelow-RS,07/06/2023,sunny,23,10:12:00,MG,ZK22627,y,,RS,m,a,11.3,123,98,2,1,111,51,20.7,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,10:20:00,MG,ZK56818,,,RS,f,a,10.7,122,95,3,1,89,38,20.8,y,,y,,y,LF,
+Dedelow-RS,07/06/2023,sunny,23,10:40:00,MG,ZK22622,y,,RS,m?,a,10.3,124,98,2,0,107,47,21.3,y,,y,,y,LF,
+Dedelow-RS,07/06/2023,sunny,23,10:45:00,MG,ZK56819,,,RS,f,a,10.7,123,96,3,2,78,24,21.8,y,,,,y,,pregnant?
+Dedelow-RS,07/06/2023,sunny,23,10:45:00,J,ZK56820,,,RS,m?,a,11.2,126,94,4,3,94,47,18.4,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,10:52:00,J,ZK22656,y,,RS,m,a,11,,,3,2,,,19.3,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,10:53:00,MG,ZK56821,,,RS,f,a,11.1,123,98,3,2,95,35,22.7,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,10:55:00,J,ZK22750,y,,RS,m,a,11.2,132,104,5,3,120,62,26.8,y,,y,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:02:00,MG,ZK22714,y,,RS,,a,11.5,,,,,,,22.7,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:03:00,J,ZK22733,y,,RS,,a,11.6,,,,,,,22.2,,,,,,LF,tag in 2023
+Dedelow-RS,07/06/2023,sunny,23,11:05:00,MG,ZK56822,,,RS,m,a,11.4,126,97,2,1,100,47,20.2,y,,y,,y,LF+,
+Dedelow-RS,07/06/2023,sunny,23,11:11:00,MG,ZK56823,,,RS,f,a,11.1,122,92,3,1,95,38,23.9,y,,,,,,pregnant
+Dedelow-RS,07/06/2023,sunny,23,11:12:00,J,ZK22758,y,,RS,m,a,11,134,98,2,1,126,62,20.4,,,,,,LF,
+Dedelow-RS,07/06/2023,sunny,23,11:14:00,MG,ZA13632,y,,RS,,a,11.2,119,94,,,111,48,19.4,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:15:00,J,ZK56821,y,,RS,,a,11.4,,,,,,,22.2,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:19:00,MG,ZK56824,,,RS,m,a,11.2,124,98,1,0,100,47,20.2,,y,,,,LF,
+Dedelow-RS,07/06/2023,sunny,23,11:20:00,J,ZK56906,y,,RS,,a,11.1,,,,,,,22,,,,,,LF,
+Dedelow-RS,07/06/2023,sunny,23,11:25:00,MG,ZK22611,y,,RS,,a,,,,,,,,19.7,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:25:00,J,ZA13660,y,,RS,,a,11.1,118,93,3,1,86,33,20.4,y,y,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,11:29:00,J,ZK56825,,,RS,,a,10.7,128,95,,,96,34,18.9,,,,,,,1 long tail feather missing
+Dedelow-RS,07/06/2023,sunny,23,11:34:00,SKS,ZI13633,y,,RS,m,a,11.6,130,99,2,2,136,65,20.4,y,,,,,LF,tail fork measure 
+Dedelow-RS,07/06/2023,sunny,23,11:37:00,MG,ZK56826,,,RS,f,a,11,123,95,3,1,104,39,21.2,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:49:00,ADM,ZK22740,y,,RS,f,a,10.7,,,,,,,19,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:52:00,MG,ZK56827,,,RS,m,a,11.6,122,95,1,1,102,75,19.3,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:55:00,ADM,ZK22663,y,,RS,f,a,11.7,,,,,,,20.9,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:57:00,ADM,ZK56828,,,RS,m,a,11.6,122,93,1,2,85,30,20.2,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,11:59:00,MG,ZK56829,,,RS,m,a,11.3,119,91,1,0,88,48,18.2,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,12:06:00,ADM,ZK56830,,,RS,f,a,10.2,121,92,1,1,93,32,19.4,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,12:08:00,MG,ZK56831,,,RS,f,a,10.8,124,96,2,1,102,65,20.3,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,12:16:00,MG,ZK22614,y,,RS,f,a,11.3,124,98,2,1,101,64,19.7,y,y,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,12:26:00,J,PC35825,,,sparrow,m,a,19.2,72,56,2,1,,,28.2,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,12:29:00,MG,ZK22628,,,RS,,a,11.2,,,,,,,20,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,12:39:00,MG,VH80594,y,,MS,,a,11,,,,,,,19.3,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,12:39:00,CL,ZK56832,,,RS,m,a,10.7,125,96,2,1,114,66.6,19.7,y,,y,,y,LF,
+Dedelow-RS,07/06/2023,sunny,23,12:39:00,MG,ZK22759,y,,RS,,a,,,,,,,,19,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,12:40:00,MG,ZK56833,,,RS,f,a,11.6,120,95,3,0,89,52,21.8,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,12:55:00,MG,ZK56834,,,RS,m,a,10.7,124,95,1,1,125,85,19.4,y,,y,,y,LF,"sehr alt, rostrat"
+Dedelow-RS,07/06/2023,sunny,23,12:56:00,ADM,ZK56835,,,RS,m,a,11,123,98,1,1,84,44,17.5,y,,y,,y,LF,really male?
+Dedelow-RS,07/06/2023,sunny,23,13:05:00,ADM,ZK56836,,,RS,m,a,11.7,124,97,2,1,113,74,21.2,y,,y,,y,,primary f. worn out
+Dedelow-RS,07/06/2023,sunny,23,13:17:00,J,ZK56837,,,RS,m,a,11.5,123,96,3,2,99,61,18.9,y,,y,,y,,"2nd weight 19,2g"
+Dedelow-RS,07/06/2023,sunny,23,13:19:00,CL,ZK22758,y,,RS,,a,11,,,,,,,20.9,,,,,,LF,
+Dedelow-RS,07/06/2023,sunny,23,13:46:00,J,ZK56838,,,RS,m,a,11,130,95,3,1,114,78,20.5,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,13:46:00,MG,ZK56839,,,RS,m,a,11.5,127,99,1,1,118,75,20,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,13:50:00,J,ZK22718,y,,RS,,a,11.1,,,,,,,19.3,,,,,,LF,
+Dedelow-RS,07/06/2023,sunny,23,13:52:00,J,ZK56840,,,RS,f,a,11.7,120,94,2,2,83,42,20.3,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,13:54:00,MG,ZK56819,y,,RS,,a,11.7,121,91,4,1,74,34,21.1,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,14:10:00,MG,ZK56841,,,RS,m,a,10.9,119,96,2,1,99,58,19.1,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,14:10:00,J,ZK56842,,,RS,m,a,11.2,127,94,2,1,101,51,18.7,,,,,,LF+,
+Dedelow-RS,07/06/2023,sunny,23,14:15:00,J,ZK22612,y,,RS,m,a,11.3,119,86,3,2,106,73,18.4,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,14:20:00,J,ZK22728,y,,RS,m,a,10.7,127,95,1,1,97,60,19.6,y,,,,,LF,
+Dedelow-RS,07/06/2023,sunny,23,14:35:00,MG,ZK56834,y,,RS,,a,,,,,,,,19.9,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,14:35:00,J,ZK22712,y,,RS,,a,12.1,,,,,,,21.4,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,14:47:00,MG,ZK56906,y,,RS,,a,,,,,,,,21.4,,,,,,,tag in 2023
+Dedelow-RS,07/06/2023,sunny,23,14:47:00,J,ZK22656,y,,RS,,a,,,,,,,,19.7,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,14:48:00,CL,ZK56843,,,RS,f,a,11,126,95,2,1,94,47,18.6,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,14:48:00,J,VH80477,y,,RS,m,a,10.8,126,95,1,1,96,61,21.8,y,,,,,LF,
+Dedelow-RS,07/06/2023,sunny,23,14:58:00,MG,VH80481,y,,RS,m,a,11.1,120,96,1,2,120,83,24.3,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,15:07:00,J,ZK56823,y,,RS,,a,,,,,,,,24.5,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,15:10:00,J,ZK22665,y,,RS,m,a,10.7,125,95,3,2,118,77,20.5,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,15:17:00,J,ZK22746,y,,RS,f,a,10.6,127,97,4,1,85,44,21.2,,,,,,,pregnant
+Dedelow-RS,07/06/2023,sunny,23,15:20:00,MG,ZA13651,y,,RS,,a,,,,,,,,19.3,,,,,,,tag in 2023
+Dedelow-RS,07/06/2023,sunny,23,15:25:00,J,ZK56844,,,RS,m,a,11.2,125,94,3,2,105,65,20.6,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,15:39:00,MG,ZK56821,y,,RS,,a,,,,,,,,21.7,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,15:39:00,J,ZK22625,y,,RS,,a,11,,,,,,,20.7,,,,,,LF,tag in 2023
+Dedelow-RS,07/06/2023,sunny,23,15:51:00,MG,ZI13648,y,,RS,f,a,10.8,123,96,3,2,86,39,20.4,y,,y,,y,LF,
+Dedelow-RS,07/06/2023,sunny,23,15:52:00,ADM,ZK56845,,,RS,m,a,10.6,125,98,3,2,109,61,20.4,y,,y,,y,,ste
+Dedelow-RS,07/06/2023,sunny,23,15:54:00,MG,ZK22716,y,,RS,,a,11.4,,,,,,,18.9,,,,,,,was tagged in 2023
+Dedelow-RS,07/06/2023,sunny,23,16:30:00,MG,VH80313,y,,RS,,a,,,,,,,,19.4,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,16:39:00,MG,ZK22687,y,,RS,m,a,10.6,123,99,3,1,110,70,18.5,y,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,16:39:00,J,ZK22668,y,,RS,m,a,11.2,127,96,2,2,98,60,22.2,y,,y,,y,,dickes …. Bauch
+Dedelow-RS,07/06/2023,sunny,23,16:44:00,J,ZK22676,y,,RS,f,a,10.9,123,92,2,2,87,51,19.3,y,y,y,,y,LF,feathers worn out
+Dedelow-RS,07/06/2023,sunny,23,16:45:00,MG,ZK22737,y,,RS,,a,10.8,,,,,,,22.1,,,,,,,tagged 2023
+Dedelow-RS,07/06/2023,sunny,23,16:50:00,CL,ZK22705,y,,RS,m,a,11.1,129,101,2,1,120,68,19.2,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,16:59:00,J,ZK56846,,,RS,m,a,11.6,127,97,2,2,115,74,19.8,y,,y,,y,,
+Dedelow-RS,07/06/2023,sunny,23,17:00:00,ADM,ZK56847,,,RS,f,a,10.6,126,98,3,1,87,44,24.3,y,y,y,,y,LF,
+Dedelow-RS,07/06/2023,sunny,23,17:05:00,J,ZK56848,,,RS,m,a,11.1,127,92,1,1,99,56,18,y,,y,,y,LF,worn out prim
+Dedelow-RS,07/06/2023,sunny,23,17:09:00,J,ZK56919,y,,RS,f,a,10.7,,,,,,,19.4,,y,y,,,,
+Dedelow-RS,07/06/2023,sunny,23,17:24:00,MG,ZK22737,y,,RS,,a,,,,,,,,22.3,,,,,,,
+Dedelow-RS,07/06/2023,sunny,23,17:25:00,ADM,ZK22646,y,,RS,,a,,,,,,,,19.9,,,y,,y,,
+Ränsch Falkenhagen,25/06/2023,"sunny, windy",,15:05:00,WU,ZK56924,n,,RS,m,a,10.6,129,,1,3,,67,18.5,,,,,,,
+Ränsch Falkenhagen,25/06/2023,"sunny, windy",,15:05:00,WU,ZK56925,n,,RS,f,a,11.6,127,,2,3,,45,23,,,,,,,
+Ränsch Falkenhagen,25/06/2023,"sunny, windy",,15:05:00,WU,ZK56926,n,,RS,f,a,10,128,,2,2,,44,21,,,,,,,
+Ränsch Falkenhagen,25/06/2023,"sunny, windy",,15:05:00,WU,ZK56927,n,2962,RS,f,a,11.5,124,,2,3,,48,22,,y,,,,,
+Ränsch Falkenhagen,25/06/2023,"sunny, windy",,15:05:00,WU,ZK56928,n,2867,RS,m,a,11.7,124,,2,2,,72,19,,y,,,,,
+Ränsch Falkenhagen,25/06/2023,"sunny, windy",,15:05:00,WU,ZK56929,n,2987,RS,m,a,11.7,127,,1,2,,66,19,,,,,,,
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,09:51:00,MG,VH80571,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.9,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,09:52:00,MG,VH59077,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.7,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,09:52:00,MG,VH80667,y,,MS,NA,a,11.7,110,89,2,1,NA,NA,19.1,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,09:54:00,MG,VH80669,n,,MS,f?,a,11.3,117,84,2,0,58,NA,18,y,NA,y,NA,y,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:03:00,MG,VH80670,n,3060,MS,m,a,10,114,91,2,1,66,NA,20.3,y,y,y,NA,y,NA,"wound, eyelash"
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:12:00,MG,VH59071,y,,MS,m,a,NA,114,89,1,0,NA,NA,17.8,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:16:00,MG,VH80671,n,2992,MS,?,a,11.7,110,88,3,2,62,NA,21.4,y,y,y,NA,y,NA,"waker glue, starting problems"
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:26:00,MG,VH80597,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.3,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:26:00,MG,VH80672,n,,MS,f?,a,11.5,114,90,3,1,63,NA,19.2,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:30:00,MG,VH80579,y,,MS,m,a,NA,NA,NA,1,1,NA,NA,18.8,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:33:00,SKS,VH80596,y,,MS,NA,NA,NA,NA,NA,NA,NA,NA,NA,17.2,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:51:00,MG,VH80673,n,,MS,f,a,10.6,107,84,3,2,60,NA,18.8,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:53:00,MG,VH80555,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.6,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:55:00,MG,VH80582,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.6,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:56:00,MG,VH80464,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19.6,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,10:59:00,MG,VH80564,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19,NA,y,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,11:00:00,MG,VH80660,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.1,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,11:01:00,MG,VH80581,y,,MS,f,a,NA,NA,NA,3,NA,NA,NA,20.1,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",25,11:03:00,MG,VH80666,y,,MS,f,a,NA,NA,NA,3,1,NA,NA,19.6,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:07:00,MG,VH80586,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,19.9,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:09:00,MG,VH80525,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19.2,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:10:00,MG,VH80649,y,,MS,NA,a,11.6,112,89,2,0,NA,NA,19,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:12:00,MG,VH80503,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19.5,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:13:00,MG,VH80599,y,,MS,f,a,NA,NA,NA,2,0,NA,NA,19.6,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:14:00,MG,VH80657,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.4,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:18:00,MG,VH80565,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19.4,NA,NA,NA,NA,NA,NA,"tag in May 2023, nest known"
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:20:00,MG,VH80592,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19.1,NA,NA,NA,NA,NA,NA,tag in 2023
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:26:00,MG,VH80354,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.6,NA,NA,NA,NA,NA,NA,tag in 2022
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:27:00,MG,VH80505,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.9,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:27:00,SKS,VH80674,n,,MS,f,a,11.6,115,85,1,2,62,NA,18.5,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:31:00,MG,VH80571,y,,MS,m,a,NA,NA,NA,1,2,NA,NA,17.4,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:39:00,MG,VH80656,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.7,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:41:00,MG,VH80590,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.4,NA,NA,NA,NA,NA,NA,tagged in 2023
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:42:00,MG,VH80555,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.4,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:42:00,MG,VH80672,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.7,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:45:00,MG,VH80580,y,,MS,NA,a,NA,NA,NA,2,0,NA,NA,18.4,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:46:00,MG,VH80570,y,2998,MS,m?,a,11.4,113,88,1,1,NA,NA,20,NA,NA,NA,NA,NA,NA,eyelash
+Dedelow-MS,26/06/2023,"sunny, slightly windy",27,11:52:00,SKS,VH80583,y,3071,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,20.1,NA,NA,NA,NA,NA,NA,waker glue
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,11:55:00,SKS,VH80675,n,,MS,f,NA,11.2,106,80,3,1,59,NA,18.1,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:00:00,U,VH80565,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19.1,NA,NA,NA,NA,NA,LF,tagged in 2023
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:01:00,U,VH80591,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.2,y,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:08:00,U,VH80676,n,,MS,NA,a,9.5,109,80,1,1,58,NA,17.8,NA,NA,NA,NA,NA,NA,could be juvenile
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:08:00,MG,VH80584,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19.4,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:09:00,MG,VH80508,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.4,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:15:00,U,VH80677,n,,MS,f,a,10.8,104,80,1,1,52,NA,19.8,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:17:00,MG,VH80663,y,,MS,f,a,NA,NA,NA,3,2,NA,NA,19.5,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:18:00,MG,VH80678,n,,MS,m,a,11.2,117,84,1,1,58,NA,18.9,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:23:00,MG,VH80679,n,,MS,NA,j,10,105,81,NA,NA,57,NA,18.4,NA,NA,NA,NA,NA,NA,nest is known
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:25:00,U,VH80680,n,,MS,f?,a,10.9,103,77,0,1,52,NA,19.2,NA,NA,NA,NA,NA,NA,pregnant?
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:27:00,MG,VH80651,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,20,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:28:00,MG,ZI13625,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,19.5,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:45:00,MG,VH80521,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.3,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:45:00,U,VH80545,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.6,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:50:00,MG,VH80599,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,19.3,NA,NA,NA,NA,NA,NA,"nest is known, pregnant"
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,12:50:00,U,VH80508,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.9,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,13:01:00,MG,VH80582,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.8,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",28,13:01:00,U,VH80681,n,,MS,NA,NA,10.6,106,81,2,1,58,NA,17.3,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,13:06:00,U,VH80528,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,20.4,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,13:13:00,U,VH80663,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,19.7,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,13:14:00,MG,VH80660,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,19,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,13:15:00,U,VH80665,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,18.2,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,13:20:00,MG,VH80682,n,,MS,m,a,11.3,111,82,1,1,61,NA,18.2,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,13:20:00,U,VH80545,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.3,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,13:28:00,MG,VH80683,n,,MS,f,a,11.3,115,84,3,2,58,NA,19,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,13:28:00,U,VH80684,n,,MS,f,a,10.5,114,87,1,2,62,NA,19.9,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:05:00,MG,VH80566,y,,MS,f,a,NA,NA,NA,3,1,NA,NA,20.1,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:05:00,U,VH80562,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,18.6,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:12:00,MG,VH80589,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,17.9,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:22:00,U,VH80591,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.8,NA,NA,NA,NA,NA,NA,tagged in 2023
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:15:00,U,VH80559,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,20.3,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:32:00,MG,VH80532,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,18.1,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:33:00,U,VH80427,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,18.8,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:33:00,U,VH80557,y,,MS,f,a,NA,NA,NA,2,1,NA,NA,17.7,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:39:00,MG,VH80466,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.8,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:39:00,U,VH80563,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,18.9,NA,NA,NA,NA,NA,NA,NA
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:43:00,U,VH80595,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,19.5,NA,NA,NA,NA,NA,LF,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:44:00,Aur,VH80566,y,,MS,f,a,NA,NA,NA,NA,NA,NA,NA,20.5,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:50:00,MG,VH80685,n,,MS,NA,a?,NA,105,80,NA,NA,54,NA,19.1,NA,NA,NA,NA,NA,NA,juvenile?
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:50:00,U,VH80663,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,20.3,NA,NA,NA,NA,NA,NA,pregnant
+Dedelow-MS,26/06/2023,"sunny, slightly windy",29,14:50:00,SKS,VH80665,y,,MS,NA,a,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+MVA-Kutzerow,26/06/2023,schwül,25,10:00:00,CL,VH80701,n,,MS,m,a,10.7,117,,1,1,,,17.4,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,10:08:00,CL,VH80702,n,,MS,m,a,11.2,114,,0,0,,,16.7,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,10:10:00,CL,VH80703,n,,MS,f,a,11.2,110,,2,2,,,17.5,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,10:13:00,CL,VH80634,y,,MS,m,a,10.9,110,,1,1,,,16.8,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,10:16:00,CL,VH80704,n,,MS,m,a,11.4,115,,0,1,,,16.2,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,10:23:00,CL,VH80705,n,,MS,f,a,11.5,109,,2,2,,,20.3,,,,,,,ei im bauch
+MVA-Kutzerow,26/06/2023,schwül,25,10:26:00,CL,VH80706,n,,MS,f,a,11.6,114,,3,1,,,19.6,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,10:33:00,CL,VH80707,n,,MS,m,a,11.8,115,,1,1,,,18.3,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,10:53:00,CL,VH80429,y,,MS,f,a,11.8,109,,1,1,,,16.8,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,10:55:00,CL,VH80708,n,,MS,f,a,11.2,111,,3,2,,,19.7,,,,,,,ei im bauch
+MVA-Kutzerow,26/06/2023,schwül,25,10:59:00,CL,VH80709,n,,MS,m,a,11.2,113,,2,1,,,15.9,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,11:05:00,CL,VH80710,n,3067,MS,f,a,11.9,115,,2,1,,,21.7,,y,y,,y,,grin angemalt
+MVA-Kutzerow,26/06/2023,schwül,25,11:35:00,CL,VH80711,n,,MS,m,a,10.5,109,,2,1,,,17.4,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,11:39:00,CL,VH80712,n,,MS,m,a,11.8,114,,2,1,,,19.5,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,11:57:00,CL,VH80713,n,,MS,f,a,10.9,110,,3,1,,,20.5,,,,,,,ei im bauch
+MVA-Kutzerow,26/06/2023,schwül,25,11:59:00,CL,VH80714,n,,MS,m,a,11.4,105,,2,1,,,17.5,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,12:04:00,CL,VH80715,n,,MS,m,a,11.1,108,,1,1,,,18.5,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,12:08:00,CL,VH80716,n,,MS,f,a,12,107,,1,1,,,18.6,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,12:14:00,CL,VH80717,n,,MS,m,a,10.5,108,,1,1,,,16,,,,,,,
+MVA-Kutzerow,26/06/2023,schwül,25,12:32:00,CL,VH80718,n,,MS,f,a,11.8,117,,3,1,,,18.3,,,,,,,2994 : antenne abgerissen
+MVA-Kutzerow,26/06/2023,schwül,25,12:37:00,CL,VH80719,n,2994,MS,m,a,11.7,113,,2,2,,,20.3,y,y,y,,y,,
+MVA-Kutzerow,26/06/2023,schwül,25,13:08:00,CL,VH80720,n,3065,MS,m,a,11.9,114,,1,1,,,20,y,y,y,,y,,pink angemalt
+MVA-Kutzerow,26/06/2023,schwül,25,13:29:00,CL,VH80721,n,2887,MS,m,a,11.5,113,,2,1,,,21.2,y,,,,,,gelb angemalt
+MVA-Kutzerow,26/06/2023,schwül,25,13:49:00,CL,VH80717,y,,MS,,a,,,,1,1,,,15.5,,,,,,,recapture from same day
+Lutz-Nix,26/06/2023,,23,09:08:00,CS,ZK56814,y,,RS,f,a,11.2,124,,1,1,,47.8,16,,,,,,LF,
+Lutz-Nix,26/06/2023,,23,09:13:00,CS,ZK22766,n,2996,RS,m,a,11.7,127,,1,2,,65.5,19,y,y,y,y,y,LF,walker
+Lutz-Nix,26/06/2023,,23,09:37:00,CS,ZK56837,y,2991,RS,f,a,11.6,125,,1,1,,56.8,19,,,,,,LF,walker
+Lutz-Nix,26/06/2023,,23,09:39:00,CS,ZK56807,y,2995,RS,m,a,11.9,125,,2,2,,71.6,22,,y,,,,LF,"walker, 1 abgebroch. schwanzfed"
+Lutz-Nix,26/06/2023,,23,09:54:00,CS,ZK22767,n,,RS,f,a,11.3,126,,1,1,,56.4,18,,,,,,LF,
+Lutz-Nix,26/06/2023,,23,10:01:00,CS,ZK56810,y,2999,RS,f,a,11.8,122,,1,1,,49.6,20.5,,y,,,,,ghost
+Lutz-Nix,26/06/2023,,23,10:05:00,CS,ZK22768,n,2990,RS,f,a,11.2,125,,1,1,,43,19,y,y,y,y,y,LF,ghost
+Lutz-Nix,26/06/2023,,23,10:34:00,CS,ZK56808,y,3076,RS,f,a,11.7,124,,1,1,,43.3,19,,,,,y,,walker
+Lutz-Nix,26/06/2023,,23,10:57:00,CS,ZK22769,n,,RS,f,a,11.2,119,,2,1,,41.5,18,,,,,,,
+Lutz-Nix,26/06/2023,,23,11:10:00,CS,ZK56811,y,3074,RS,f,a,11.3,125,,3,2,,52.7,19.5,,y,,,,LF,walker
+Lutz-Nix,26/06/2023,,23,11:55:00,CS,ZK22767,y,,RS,,a,,,,,,,,17,,,,,,,siehe gleicher tag
+Lutz-Nix,26/06/2023,,23,11:57:00,CS,ZK56815,y,,RS,f,a,11.9,121,,1,1,,35.5,17,,,,,,LF,
+Lutz-Nix,26/06/2023,,23,13:47:00,CS,ZK22770,n,3073,RS,m,a,11.2,124,,1,2,,59.5,19.5,y,,y,y,y,LF,ghost
+Lutz-Nix,26/06/2023,,23,14:30:00,CS,ZK22767,y,,RS,,a,,,,,,,,17,,,,,,,siehe gleicher tag
+Lutz-Nix,26/06/2023,,23,14:33:00,CS,ZK22771,n,3079,RS,m,a,11.8,123,,2,2,,72.2,19,y,y,y,y,y,LF,walker
+Lutz-Nix,26/06/2023,,23,14:59:00,CS,ZK56810,y,,RS,,a,,,,,,,,,,,,,,,siehe gleicher tag
+Lutz-Nix,26/06/2023,,23,15:00:00,CS,ZK56812,y,3078,RS,m,a,11.8,127,,1,2,,70.2,19.5,,,,,,,walker
+Futterhaus,26/06/2023,sunny,24,09:44:00,WU,ZK56931,n,,RS,f,a,10.9,126,,3,3,,53.4,21,,y,,,,,
+Futterhaus,26/06/2023,,24,09:56:00,WU,ZK56914,y,3061,RS,f,a,10.9,125,,3,3,,46.7,23,y,,,,,,Kl: Wimp
+Futterhaus,26/06/2023,,24,10:30:00,WU,ZK56909,y,3059,RS,m,a,,,,,,,,20,,,,,,LF,Kl: Walker
+Futterhaus,26/06/2023,,24,11:10:00,WU,ZK56931,n,3062,RS,m,a,10.8,129,,1,2,,77.9,20,,y,y,,y,,"Kl: Walker, no blood"
+Futterhaus,26/06/2023,,24,11:45:00,WU,ZK56932,n,3063,RS,f,a,11.6,128,,1,2,,49.2,20,y,y,y,,y,,Kl: Wimp
+Futterhaus,26/06/2023,,24,00:00:00,WU,ZK56933,n,3075,RS,f,a,11.2,120,,3,2,,45.6,22,y,y,y,,y,,Kl: Wimp
+Futterhaus,26/06/2023,,24,12:30:00,WU,ZK56934,n,,RS,f,a,11.2,120,,2,1,,46.1,19,,,,,,,
+Futterhaus,26/06/2023,,24,12:44:00,WU,ZK56917,y,3072,RS,f,a,,,,2,2,,,21.5,y,y,y,,y,,Kl: Walker
+Futterhaus,26/06/2023,,24,13:00:00,WU,ZK56935,n,3070,RS,m?,a,10.9,122,,1,2,,41.6,20,y,y,y,,y,,Kl: Walker
+Futterhaus,26/06/2023,,24,13:10:00,WU,ZK22669,y,,RS,,,,,,,,,,20,,,,,,,
+Futterhaus,26/06/2023,,24,13:55:00,WU,ZK56936,n,,RS,m?,j,10.9,109,,0,2,,11.9,20,,,,,,LF,
+Futterhaus,26/06/2023,,24,14:00:00,WU,ZK22691,y,,RS,,,,,,,,,,17.4,,,,,,,
+Futterhaus,26/06/2023,,24,14:05:00,WU,ZK56937,n,,RS,f,a,11,119,,3,3,,34.6,22.2,,,,,,,
+Futterhaus,26/06/2023,,24,14:10:00,WU,ZK56903,y,,RS,f,a,,122,,0,1,,35.8,18.5,,,,,,,
+Futterhaus,27/06/2023,,24,14:15:00,WU,ZK22685,,,RS,m?,a,,129,,1,1,,66.1,18,,y,,,,,
+Futterhaus,26/06/2023,,24,14:30:00,WU,ZK56938,y,,RS,m,a,,123,,0,1,,57.1,18.5,,y,,,,,
+Futterhaus,26/06/2023,,24,14:45:00,WU,ZK56939,n,3081,RS,f,a,10.2,125,,2,2,,35.2,21,,,,,,,Kl: Wimp
+Futterhaus,26/06/2023,,24,15:07:00,WU,ZK22710,n,,RS,f,a,10.3,123,,0,1,,35.1,19.5,,,,,,,
+Futterhaus,26/06/2023,,27,15:10:00,WU,,,,RS,,j?,,111,,,,,16.2,19,,,,,,,
+Futterhaus,26/06/2023,,27,15:25:00,WU,ZK56940,n,,RS,f,a,11.1,124,,2,4,,43.4,21.5,,,,,,,
+Futterhaus,26/06/2023,,,15:50:00,WU,ZK56941,n,3082,RS,m,a,10.4,126,,1,2,,63.3,20,,y,y,,y,LF,Kl: Walker
+Futterhaus,26/06/2023,,,16:00:00,WU,ZK56942,n,3080,RS,f,a,11.1,124,,2,2,,42.5,21.5,,y,,,,,Kl: Wimp
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,08:40:00,SKS,VH80686,n,,MS,f,a,11.4,112,83,1,1,61,,17.7,,,,,,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,08:45:00,SKS,VH80687,n,3085,MS,f,a,11.1,114,83,2,1,58,,21.2,y,,y,,y,,eyelash
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,08:57:00,MG,VH80688,n,,MS,m,a,11.4,109,85,1,1,62,,19.3,,,,,,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,09:11:00,MG,VH80689,n,,MS,f,a,11.2,108,83,2,0,59,,18,,y,,,,,Feder 
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,09:12:00,MG,VH80690,n,3158,MS,m,a,11.6,111,86,1,1,61,,20,y,,y,,y,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,09:28:00,SKS,VH80691,n,,MS,m,a,11.4,113,84,1,1,57,,19.3,,,,,,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,09:32:00,SKS,VH80692,n,,MS,m,a,11.2,111,83,0,1,62,,17.9,,,,,,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,09:49:00,SKS,VH80693,n,,MS,m,a,11.5,114,85,1,0,57,,18.9,,,,,,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,09:59:00,SKS,VH80694,n,,MS,m,a,11.8,114,86,0,1,60,,18.2,,,,,,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,10:02:00,SKS,VH80695,n,,MS,m,a,11.4,115,84,1,1,61,,18.9,,,,,,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,10:51:00,SKS,VH80696,n,,MS,m,a,11.2,110,80,2,1,59,,18.7,,,,,,,
+"PRIVAT, Labes, Falkenhagen ",27/06/2023,"sunny, very windy",18,11:05:00,SKS,VH80697,n,3151,MS,?,a,11.5,110,81,2,0,60,,21,y,,y,,y,,walker
+Menke-Kutzerow,27/06/2023,,,12:05:00,SKS,VH80698,n,,MS,m,a,11.4,114,85,2,2,65,,17,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:07:00,CL,VH80734,n,,MS,m,a,10.8,108,83,2,1,,,19,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:11:00,CL,VH80735,n,,MS,f,a,11,113,90,3,1,63,,15.6,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:12:00,CS,VH80736,n,,MS,m,a,11.8,113,96,2,1,63,,19.4,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:17:00,CL,VH80737,n,,MS,m,a,11.3,113,87,1,1,66,,17,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:19:00,CS,VH80436,y,,MS,m,a,11.6,113,85,1,1,66,,19.3,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:21:00,CL,VH80429,y,,MS,m,a,11.9,107,82,0,1,53,,16.2,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:23:00,CS,VH80738,n,,MS,m,a,11.5,110,84,3,2,59,,17.1,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:27:00,CS,VH80739,n,,MS,m,a,11.5,110,83,3,2,57,,19.1,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:29:00,CL,VH80740,n,,MS,f,a,12,112,87,2,1,55,,18.7,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:31:00,CS,VH80741,n,,MS,m,a,11.3,109,81,1,1,59,,17.3,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:33:00,CL,VH80705,y,3149,MS,f,a,11.5,109,84,3,2,,,20.1,,y,y,,y,,no blood
+Menke-Kutzerow,27/06/2023,,,12:48:00,CL,VH80742,n,,MS,f,a,12.2,111,84,2,1,57,,18.6,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:56:00,CL,VH80718,y,,MS,,,,,,,,,,17.9,,,,,,,
+Menke-Kutzerow,27/06/2023,,,12:58:00,CL,VH80624,y,,MS,f,a,12.2,111,84,1,1,62,,16.7,,,,,,,
+Menke-Kutzerow,27/06/2023,,,13:06:00,CL,VH80603,y,,MS,,a,,,,,,,,19.1,,,,,,,
+Mueller,27/06/2023,schwül,25,09:02:00,CL,VH80723,,,MS,m,a,11.1,111,,2,1,,,17.7,,,,,,,
+Mueller,27/06/2023,schwül,25,09:13:00,CL,VH80724,,,MS,f,a,11.2,120,,1,0,,,17.7,,,,,,,
+Mueller,27/06/2023,schwül,25,09:19:00,CL,VH80725,,,MS,m,a,11.5,115,,2,2,,,17.4,,,,,,,
+Mueller,27/06/2023,schwül,25,09:37:00,CL,VH80726,,,MS,m,a,11.5,111,,1,1,,,17.6,,,,,,,
+Mueller,27/06/2023,schwül,25,09:49:00,CL,VH80727,,,MS,f,,11.5,111,,3,1,,,17.7,,,,,,,
+Mueller,27/06/2023,schwül,25,10:00:00,CL,VH80728,,,MS,m,a,12.2,114,,2,1,,,17.1,,,,,,,
+Mueller,27/06/2023,schwül,25,10:13:00,CL,VH80729,,,MS,m,,11.4,112,,2,2,,,18.5,,,,,,,
+Mueller,27/06/2023,schwül,25,10:39:00,CL,VH80730,,,MS,m,a,11,109,,2,1,,,18.5,,,,,,,
+Mueller,27/06/2023,schwül,25,10:40:00,CL,VH80731,,,MS,m,a,11.8,112,,1,1,,,18.1,,,,,,,
+Mueller,27/06/2023,schwül,25,10:43:00,CL,VH80732,,,MS,f,a,11.8,116,,3,2,,,19.3,,,,,,,
+Mueller,27/06/2023,schwül,25,10:54:00,CL,VH80733,,,MS,m,a,11.4,114,,2,1,,,18,,,,,,,
+Fom.Martin Holzendorf,27/06/2023,Leicht bewölkt winding,17,08:18:00,CS,ZK56801,y,,RS,f,a,,,,2,2,,,17,,,,,,,
+Fom.Martin Holzendorf,27/06/2023,Leicht bewölkt winding,17,08:21:00,CS,ZK56805,y,3090,RS,m,a,,,,1,2,,,19.5,,y,,,,,torbot
+Fom.Martin Holzendorf,27/06/2023,Leicht bewölkt winding,17,08:23:00,CS,ZK56802,y,3069,RS,m,a,,,,1,2,,,19,,y,,,,LF,torbot
+Fom.Martin Holzendorf,27/06/2023,Leicht bewölkt winding,17,08:24:00,CS,ZK56804,y,,RS,m,a,,,,1,1,,,17.5,,,,,,,
+Fom.Martin Holzendorf,27/06/2023,Leicht bewölkt winding,17,08:29:00,CS,ZK22772,n,3064,RS,f,a,11.3,122,,2,2,,42.4,21.5,y,,y,y,y,LF,torbot
+Fom.Martin Holzendorf,27/06/2023,Leicht bewölkt winding,17,08:59:00,CS,ZK22773,n,,RS,m,a,11.4,129,,1,1,,73.3,18.5,,,,,,,
+Fom.Martin Holzendorf,27/06/2023,Leicht bewölkt winding,17,09:12:00,CS,ZK56802,y,3084,RS,m,a,,,,1,2,,,19,,,,,,,walker
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,13:30:00,CS,ZK22774,n,,RS,f,a,11.4,128,,3,3,,38.8,23.5,,,,,,,pregnant
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,13:35:00,CS,ZK22775,n,3086,RS,m,a,11.7,129,,1,2,,69.8,20.5,y,y,y,y,y,LF,
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,13:55:00,CS,ZK22776,n,,RS,m,a,11.1,122,,2,2,,54.4,18.5,,y,,,,,
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:05:00,CS,ZK56926,y,3068,RS,f,a,11.2,126,,5,3,,35.3,20,y,,y,y,y,,eye lash ->MG
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:09:00,CS,ZK22777,n,,RS,,j,,,,,,,,,,,,,,,beringung links 
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:14:00,CS,ZK22778,n,,RS,m,a,11.3,125,,2,2,,62,18,,,,,,,
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:19:00,CS,ZK56927,y,,RS,m?,a,11.4,123,,2,0,,47.1,18,,,,,,LF+,steurfeden -> MG
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:24:00,CS,ZK56929,y,3098,RS,m,a,11.4,125,,1,1,,54.9,19,y,y,y,y,y,LF+,eyelash -> MG
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:35:00,CS,ZK56924,y,3163,RS,m,a,11.1,130,,1,0,,70.5,19,y,,y,y,y,,eyelash -> MG
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:36:00,CS,ZK22779,n,,RS,,j,,,,,,,,,,,,,,LF+,beringung links 
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:44:00,MG,ZK22780,n,,RS,m,a,10.7,126,,1,0,,69.8,17.5,,,,,,LF+,
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:45:00,CS,ZK22781,n,,RS,f,a,10.6,118,,3,3,,47.8,22,,,,,,,pregnant
+Rens,27/06/2023,"windig, wechselhaft, sonnig",21,14:49:00,MG,ZK22782,n,,RS,f,a,11.2,125,,2,0,,40.8,20,,,,,,,pregnant
+Futterhaus,27/06/2023,teils wolken,19,08:40:00,WU,ZK22727,y,3159,RS,m,a,,129,,1,1,,79.1,21,,y,y,,y,,"walker, no blood"
+Futterhaus,27/06/2023,teils wolken,19,09:10:00,WU,ZK22708,y,,RS,f,a,,122,,0,3,,48.6,17,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,10:00:00,WU,ZK56943,n,,RS,f,a,11.6,125,,0,3,,43.5,17.5,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,10:20:00,WU,VH80658,y,3157,MS,m,a,,108,,1,3,,,20,,y,,,,,walker
+Futterhaus,27/06/2023,teils wolken,19,10:20:00,WU,VH80583,y,,MS,,,,,,1,2,,,,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,10:43:00,TM,ZK56944,n,,RS,f,a,11.6,123,,1,2,,35.8,18,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,11:30:00,WU,ZK56945,n,3154,RS,f,a,10.7,126,,3,2,,40.8,22.5,y,,y,,y,,wimp
+Futterhaus,27/06/2023,teils wolken,19,11:35:00,WU,ZK56914,y,3156,RS,f,a,,122,,3,2,,44.6,23,,,,,,,wimp
+Futterhaus,27/06/2023,teils wolken,19,11:40:00,WU,VH80648,y,3153,MS,m?,a,,108,,1,3,,,20,,y,,,,,wimp
+Futterhaus,27/06/2023,teils wolken,19,12:30:00,WU,ZK56946,n,3095,RS,f,a,11.1,121,,1,2,,44.8,19,y,,y,,y,,walker
+Futterhaus,27/06/2023,teils wolken,19,12:40:00,WU,VH80661,y,,MS,f,a,,112,,1,3,,,19.5,,y,,,,,walker
+Futterhaus,27/06/2023,teils wolken,19,13:00:00,WU,VH80658,y,,MS,,,,,,,,,,,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,13:27:00,WU,ZK56947,n,3097,RS,m,a,10.9,124,,1,2,,55.9,21,,y,,,,,walker
+Futterhaus,27/06/2023,teils wolken,19,13:45:00,WU,ZK56920,y,3160,RS,f,a,,124,,3,2,,,20.5,y,y,y,,y,,wimp
+Futterhaus,27/06/2023,teils wolken,19,13:50:00,WU,ZK56948,n,3087,RS,m,a,11.1,122,,1,2,,60.8,21.5,y,y,y,,y,,wimp
+Futterhaus,27/06/2023,teils wolken,19,14:20:00,WU,ZK56949,n,3175,RS,m,a,11.5,124,,1,1,,55.5,20.5,,y,y,,y,,walker
+Futterhaus,27/06/2023,teils wolken,19,14:20:00,LS,ZK56950,n,,RS,f,a,10.8,120,,1,1,,37.1,16.5,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,15:00:00,NS,ZK56952,n,,RS,m,a,,122,,1,1,,69.2,18.5,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,15:05:00,WU,ZK56951,n,3161,RS,m,a,11,124,,1,2,,75.7,19.5,y,y,y,,y,,walker
+Futterhaus,27/06/2023,teils wolken,19,15:29:00,WU,ZK56921,y,,RS,f,a,11.1,125,,2,3,,55.6,19.5,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,15:46:00,WU,ZK56943,y,,RS,,,,,,,,,,19,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,16:30:00,WU,VH80583,y,,MS,,,,,,,,,,,,,,,,,
+Futterhaus,27/06/2023,teils wolken,19,16:36:00,WU,VH80544,y,3162,MS,m,a,,112,,1,3,,,21.5,y,y,y,,y,LF,wimp
+Mehlis II MVA,28/06/2023,teils bewölkt windig,20,17:20:00,WU,3171,n,3171,MS,f,a,12.3,113,,3,3,,,20,y,y,y,,,,walker
+Mehlis II MVA,28/06/2023,teils bewölkt windig,20,17:40:00,WU,3166,n,3166,MS,f,a,10.8,113,,3,2,,,20,,,,,,,walker
+Mehlis II MVA,28/06/2023,teils bewölkt windig,20,17:45:00,WU,3169,n,3169,MS,f,a,11.2,111,,3,3,,,20,,y,y,,y,,walker
+Mehlis II MVA,28/06/2023,teils bewölkt windig,20,18:30:00,WU,3174,n,3174,MS,m,a,12,126,,1,3,,,20.5,y,y,,,,,wimp
+Mehlis II MVA,28/06/2023,teils bewölkt windig,20,19:00:00,WU,3172,n,3172,MS,m,a,12.1,110,,1,2,,,21,,y,,,,,wlaker
+Mehlis II MVA,28/06/2023,teils bewölkt windig,20,19:45:00,WU,3165,n,3165,MS,m,a,12.1,110,,1,2,,,20.5,,,,,,,wimp
