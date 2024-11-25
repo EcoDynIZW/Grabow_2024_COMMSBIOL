@@ -1,5 +1,7 @@
 # Sick without signs. Subclinical infections reduce local movements, alter habitat selection, and cause demographic shifts
 
+<https://doi.org/10.1038/s42003-024-07114-4>
+
 <https://doi.org/10.5281/zenodo.13934755>
 
 ![A house martin (Delichon urbicum) tagged with ultra-high resolution ATLAS tag; photo: Marie Klett](images/DSC_7296.JPG)
